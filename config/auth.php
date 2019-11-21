@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [
@@ -91,10 +91,10 @@ return [
     | they have less time to be guessed. You may change this as needed.
     |
     */
-
+    //thêm tên bản db_users
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'db_user',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

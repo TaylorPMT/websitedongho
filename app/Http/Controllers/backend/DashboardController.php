@@ -10,6 +10,6 @@ class DashboardController extends Controller
     //
     function index()
     {
-        return "Bảng Điểu Khiển";
+        return view("backend.page.dashboard.index");
     }
 }

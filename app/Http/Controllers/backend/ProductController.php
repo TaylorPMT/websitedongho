@@ -10,6 +10,7 @@ use App\Http\Requests\ProductInsertRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProductController extends Controller
@@ -40,7 +41,7 @@ class ProductController extends Controller
         return view('backend.page.product.insert',compact('listcat'));
     }
     function postinsert(ProductInsertRequest $request)
-    {
+    {   $user_id=Auth::user()->id;
         $row=new Product;
         $row->catid=$request->catid;
         $row->name=$request->name;
@@ -57,9 +58,9 @@ class ProductController extends Controller
         $row->status=$request->status;
 
         $row->created_at=Carbon::now();
-        $row->created_by=1;
+        $row->created_by=$user_id;
         $row->updated_at=Carbon::now();
-        $row->updated_by=1;
+        $row->updated_by=$user_id;
 
 
         //Xử Lý Img
@@ -89,7 +90,7 @@ class ProductController extends Controller
         return view('backend.page.product.update',compact('listcat','row'));
     }
     function postupdate(ProductUpdateRequest $request,$id)
-    {
+    {   $user_id=Auth::user()->id;
         $row=Product::find($id);
         $row->catid=$request->catid;
         $row->name=$request->name;
@@ -107,7 +108,7 @@ class ProductController extends Controller
 
 
         $row->updated_at=Carbon::now();
-        $row->updated_by=1;
+        $row->updated_by=$user_id;
 
 
         //Xử Lý Img
@@ -134,7 +135,7 @@ class ProductController extends Controller
 
     }
     function status($id)
-    {
+    {   $user_id=Auth::user()->id;
         $row =Product::find($id);
         if($row==null)
         {
@@ -149,7 +150,7 @@ class ProductController extends Controller
         return redirect()->route("product_index")->with("message",["type"=>"success","msg"=>"Cập[ Nhật Sản Phẩm Hết Hàng "]);
     }
     function updatestatus($id)
-    {
+    {   $user_id=Auth::user()->id;
         $row =Product::find($id);
         if($row==null)
         {
@@ -157,14 +158,14 @@ class ProductController extends Controller
         }else
         {
             $row->status=1;
-            //$row->update_at=;
-            //$row->update_by=;
+            $row->updated_at=Carbon::now();
+            $row->updated_by=$user_id;
         }
         $row->save();
         return redirect()->route("product_index")->with("message",["type"=>"success","msg"=>"Sản Phẩm Có Hàng Trở Lại"]);
     }
     function deltrash($id)
-    {
+    {   $user_id=Auth::user()->id;
         $row =Product::find($id);
         if($row==null)
         {
@@ -172,14 +173,14 @@ class ProductController extends Controller
         }else
         {
             $row->status=0;
-            //$row->update_at=;
-            //$row->update_by=;
+            $row->updated_at=Carbon::now();
+            $row->updated_by=$user_id;
         }
         $row->save();
         return redirect()->route("product_index")->with("message",["type"=>"success","msg"=>"Xóa Thành Công"]);
     }
     function retrash($id)
-    {
+    {   $user_id=Auth::user()->id;
         $row =Product::find($id);
         if($row==null)
         {
@@ -187,8 +188,8 @@ class ProductController extends Controller
         }else
         {
             $row->status=2;
-            //$row->update_at=;
-            //$row->update_by=;
+            $row->updated_at=Carbon::now();
+            $row->updated_by=$user_id;
             $row->save();
             return redirect()->route("product_index")->with("message",["type"=>"success","msg"=>"Khôi Phục Thành Công"]);
         }
@@ -204,8 +205,6 @@ class ProductController extends Controller
         }else
         {
 
-            //$row->update_at=;
-            //$row->update_by=;
             $row->delete();
             return redirect()->route("product_trash")->with("message",["type"=>"success","msg"=>"Xóa Thành Công"]);
         }

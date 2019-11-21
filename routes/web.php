@@ -18,11 +18,15 @@ Route::get('san-pham/{slug}','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@category');
 
 
-
+//route login
+Route::get('login','backend\AuthController@getlogin')->name('login');
+Route::post('login','backend\AuthController@postlogin')->name('postlogin');
+//route logou
+Route::get('logout','backend\AuthController@logout')->name('logout');
 /* Route admin */
 
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
     //
     Route::get('/','backend\DashboardController@index')->name('Dashboard');
 
