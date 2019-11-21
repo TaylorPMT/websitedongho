@@ -1,0 +1,56 @@
+.bg-topbar {
+    background: #007772;
+    line-height: 36px;
+    color: #f1f1f1;
+    font-size: 12px;
+}
+
+.header {
+    padding: 20px 0;
+}
+
+.header .logo .img-logo {
+    width: 80%;
+}
+
+.account-cart {
+    text-align: right;
+}
+
+.img-account {
+    width: 35px;
+}
+
+
+/* main menu */
+
+.mainmenu {
+    background: #007772;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-item {
+    padding: 3px;
+}
+
+.nav-item:hover {
+    background: #f2f2f2;
+}
+
+.nav-item:hover a {
+    color: #007772 !important;
+}
+
+.nav-item a {
+    color: #f1f1f1 !important;
+}
+
+
+/* content */
+
+.maincontent {
+    padding-top: 20px;
+}
