@@ -59,7 +59,7 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
 
 });
-Route::get('{slug}','frontend\ProductController@detail');
+
 //page gioi thieu
 Route::get('page/gioi-thieu','page\PageController@gioithieu');
 //page tin tuc
@@ -71,3 +71,5 @@ Route::get('san-pham','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@index');
 
 Route::get('san-pham/{slug}','frontend\ProductController@category');
+Route::get('{slug}','frontend\ProductController@detail');
+
