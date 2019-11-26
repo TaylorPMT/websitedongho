@@ -15,6 +15,7 @@
 
 .account-cart {
     text-align: right;
+    font-size: 20px;
 }
 
 .img-account {
@@ -53,4 +54,17 @@
 
 .title-introduce {
     color: seagreen;
+}
+
+.fas {
+    color: #007772;
+}
+
+.account-cart a {
+    color: #007772;
+    transition: 0.8s;
+}
+
+.account-cart a:hover {
+    color: red;
 }

@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css') }}"  >
     <link rel="stylesheet" href="{{asset('css/layoutsite.css') }}">
+    <link rel="stylesheet" href="{{asset('css/all.min.css') }}">
+
           @yield('session_header')
   </head>
   <body>
@@ -42,8 +44,8 @@
                                 </form>
                         </div>
                         <div class="col-md-3 account-cart">
-                            <img class="img-account" src="{{ asset('img/giohang.png') }}" alt="logo" />   <span>  |  </span>
-                            <img class="img-account" src="{{ asset('img/account.png') }}" alt="logo">
+                          <a href=""><i class="fas fa-shopping-cart"> </i> Giỏ Hàng</a>|
+                          <a href=""><i class="fas fa-user"></i>Đăng Nhập</a>
                         </div>
                     </div>
                 </div>
