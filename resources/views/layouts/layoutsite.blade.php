@@ -89,7 +89,7 @@
         {{--  <!!--coppyright-->  --}}
         <section class="clearfix copyright bg-topbar border-top my-3">
                 <div class="container">
-                    coppyright @
+                    áđâsdsa
                 </div>
         </section>{{--  <!!--end--coppyright-->  --}}
 

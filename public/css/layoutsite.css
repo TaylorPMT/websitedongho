@@ -51,41 +51,6 @@
 
 /* content */
 
-.maincontent {
-    padding-top: 20px;
-}
-
-.title {
-    font-family: bold;
-    color: rgb(82, 140, 226);
-    width: 100%;
-    text-align: center;
-}
-
-.container-fluid {
-    line-height: 30px;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.row-l {
-    display: block;
-    text-align: left;
-    line-height: 3px;
-}
-
-.row-l>p {
-    padding: 5px 150px 5px 0px;
-}
-
-.row-r {
-    display: block;
-    padding: 45px 0px;
-    line-height: 7px;
-}
-
-.content>h3 {
-    text-align: center;
-    margin-right: 140px;
+.title-introduce {
+    color: seagreen;
 }
