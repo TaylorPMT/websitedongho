@@ -72,3 +72,30 @@
 .introduce {
     padding: 20px 0;
 }
+
+.col-1 {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.row {
+    line-height: 20px;
+}
+
+.row-1 {
+    text-align: center;
+    line-height: 20px;
+}
+
+.col-1,
+.col-2,
+.col-3 {
+    min-width: 380px;
+}
+
+.fa-facebook-square,
+.fa-youtube {
+    font-size: large;
+    padding: 10px;
+    color: white;
+}

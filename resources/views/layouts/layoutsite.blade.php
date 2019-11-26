@@ -91,7 +91,21 @@
         {{--  <!!--coppyright-->  --}}
         <section class="clearfix copyright bg-topbar border-top my-3">
                 <div class="container">
-                    coppyright @
+                    <div class="row">
+                        <div class="col-1">Địa chỉ</div>
+                        <div class="col-2">
+                                
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                
+                        </div>
+                        <div class="col-3">
+                            Fanpage 
+                        </div>
+
+                    </div>
+                    <div class="row-1">@Coppyright</div>
+                    
                 </div>
         </section>{{--  <!!--end--coppyright-->  --}}
 
