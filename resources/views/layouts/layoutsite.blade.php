@@ -35,7 +35,7 @@
                 <div class="container">
                     <div class="row my-2">
                         <div class="col-md-3 logo">
-                            <img class="img-logo" src="{{ asset('img/logo.jpg') }}" alt="logo">
+                            <img class="img-logo" src="{{ asset('img/logo.png') }}" alt="logo">
                         </div>
                         <div class="col-md-6 search">
                                 <form class="form-inline my-2 my-lg-0">
@@ -45,13 +45,13 @@
                         </div>
                         <div class="col-md-3 account-cart">
                           <a href=""><i class="fas fa-shopping-cart"> </i> Giỏ Hàng</a>|
-                          <a href=""><i class="fas fa-user"></i>Đăng Nhập</a>
+                          <a href="{{ route('postlogin') }}"><i class="fas fa-user"></i>Đăng Nhập</a>
                         </div>
                     </div>
                 </div>
         </section>{{--  <end--header-->  --}}
         {{--  <!--menu--!>  --}}
-        <section class="clearfix mainmenu">
+        <section class="clearfix mainmenu my-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -97,6 +97,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

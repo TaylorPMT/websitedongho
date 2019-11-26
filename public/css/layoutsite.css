@@ -9,7 +9,11 @@
     padding: 20px 0;
 }
 
-.header .logo .img-logo {
+.header .logo {
+    width: 80%;
+}
+
+.img-logo {
     width: 80%;
 }
 
@@ -63,4 +67,8 @@
 
 .account-cart a:hover {
     color: red;
+}
+
+.introduce {
+    padding: 20px 0;
 }

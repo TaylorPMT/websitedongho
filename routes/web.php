@@ -66,7 +66,7 @@ Route::get('page/gioi-thieu','page\PageController@gioithieu');
 Route::get('page/lien-he','page\PageController@lienhe');
 //
 
-Route::get('/','frontend\HomeController@index');
+Route::get('/','frontend\HomeController@index')->name('user');
 Route::get('san-pham','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@index');
 

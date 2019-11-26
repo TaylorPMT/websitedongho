@@ -14,6 +14,6 @@ class PageController extends Controller
     }
     function lienhe()
     {
-        echo "Đây Là Trang Liên hệ";
+        return view('frontend.contact');
     }
 }
