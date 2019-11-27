@@ -45,7 +45,18 @@
                         </div>
                         <div class="col-md-3 account-cart">
                           <a href=""><i class="fas fa-shopping-cart"> </i> Giỏ Hàng</a>|
-                          <a href="{{ route('postlogin') }}"><i class="fas fa-user"></i>Đăng Nhập</a>
+                          <a href="{{ route('loginuser') }}"><i class="fas fa-user"></i>Đăng Nhập</a>
+                          @if(Session::has('login') && Session::get('login') == true)
+                          @endif
+                          <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xin chào {{ Session::get('name') }} <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <div>
+                                    <a href="{{ Route('dangxuat') }}">Đăng Xuất</a>
+                                </div>
+                            </div>
+                          </div>
+                          
                         </div>
                     </div>
                 </div>
