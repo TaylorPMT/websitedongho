@@ -55,7 +55,13 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
 
 
-    });
+ });
+
+ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
+
+     //
+ });
+
 
 
 });
