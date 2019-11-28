@@ -57,10 +57,10 @@
                                <td class="text-info">{{ $row->created_at }}</td>
                                <td>
                                    @if ($row->status==1)
-                                   <a class="btn btn-sm btn-success" href="{{ route('product_status',['id'=>$row->id]) }}"><i class="fas fa-toggle-on"></i></a>
+                                   <a class="btn btn-sm btn-success" href="{{ route('category_status',['id'=>$row->id]) }}"><i class="fas fa-toggle-on"></i></a>
                                    @else
 
-                                   <a class="btn btn-sm btn-danger" href="{{ route('product_updatestatus',['id'=>$row->id]) }}"><i class="fas fa-toggle-off"></i></a>
+                                   <a class="btn btn-sm btn-danger" href="{{ route('category_updatestatus',['id'=>$row->id]) }}"><i class="fas fa-toggle-off"></i></a>
 
                                    @endif
 

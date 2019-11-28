@@ -17,7 +17,7 @@
 Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
 Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
 Route::get('dangxuat','backend\LoginUser@dangxuat')->name('dangxuat');
-    
+
 
 //route login
 Route::get('login','backend\AuthController@getlogin')->name('login');
@@ -72,6 +72,17 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
         Route::get('insert','backend\CategoryController@getinsert')->name('category_getinsert');
         Route::post('insert','backend\CategoryController@postinsert')->name('category_postinsert');
+
+        //update status
+        Route::get('status/{id}','backend\CategoryController@status')->name('category_status');
+
+        Route::get('updatestatus/{id}','backend\CategoryController@updatestatus')->name('category_updatestatus');
+
+        //update category
+        Route::get('update/{id}','backend\CategoryController@getupdate')->name('category_getupdate');
+
+        Route::post('update/{id}','backend\CategoryController@postupdate')->name('category_postupdate');
+
 
     });
 

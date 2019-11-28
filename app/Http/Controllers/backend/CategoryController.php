@@ -49,4 +49,40 @@ class CategoryController extends Controller
             return redirect()->route("index_category")->with("message",["type"=>"danger","msg"=>"Thêm Thất Bại "]);
         }
     }
+
+    //status cate
+    function status($id)
+    {
+        $user_id=Auth::user()->id;
+        $row=Category::find($id);
+        if($row==null)
+        {
+            return redirect()->route("index_category")->with("message",["type"=>"danger","msg"=>" Loại Sản Phẩm Không Tồn Tại"]);
+        }else
+        {
+            $row->status=2;
+            $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
+            $row->updated_by=$user_id;
+        }
+        $row->save();
+        return redirect()->route("index_category")->with("message",["type"=>"success","msg"=>"Tạm Ngừng Cung Cấp Loại Sản Phẩm Này"]);
+
+    }
+    function updatestatus($id)
+    {
+        $user_id=Auth::user()->id;
+        $row=Category::find($id);
+        if($row==null)
+        {
+            return redirect()->route("index_category")->with("message",["type"=>"danger","msg"=>" Loại Sản Phẩm Không Tồn Tại"]);
+        }else
+        {
+            $row->status=1;
+            $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
+            $row->updated_by=$user_id;
+        }
+        $row->save();
+        return redirect()->route("index_category")->with("message",["type"=>"success","msg"=>"Loại Sản Phẩm Này Cung Câp Trở Lại"]);
+    }
+
 }
