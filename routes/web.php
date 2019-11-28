@@ -13,6 +13,11 @@
 
 
 
+//route login user
+Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
+Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
+Route::get('dangxuat','backend\LoginUser@dangxuat')->name('dangxuat');
+    
 
 //route login
 Route::get('login','backend\AuthController@getlogin')->name('login');

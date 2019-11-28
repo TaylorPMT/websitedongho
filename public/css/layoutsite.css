@@ -99,3 +99,8 @@
     padding: 10px;
     color: white;
 }
+
+.form-control {
+    max-width: 250px;
+    text-align: center;
+}

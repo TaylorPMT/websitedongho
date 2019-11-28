@@ -19,11 +19,11 @@
         @csrf
         <div class="form-group">
             <label for="my-input"><i class="fas fa-users">||</i> Tên Đăng Nhập</label>
-            <input type="text" class="form-control" name="username">
+            <input type="text" class="form-control" name="username" placeholder="Login">
         </div>
         <div class="form-group">
             <label for="my-input"><i class="fas fa-unlock">||</i> Mật Khẩu</label>
-            <input type="text" class="form-control" name="password">
+            <input type="text" class="form-control" name="password" placeholder="Password">
         </div>
         <div class="form-group">
             <button type="submit">Đăng Nhập</button>
