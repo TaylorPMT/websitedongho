@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css') }}"  >
     <link rel="stylesheet" href="{{asset('css/layoutsite.css') }}">
+    <link rel="stylesheet" href="{{asset('css/all.min.css') }}">
+
           @yield('session_header')
   </head>
   <body>
@@ -33,7 +35,7 @@
                 <div class="container">
                     <div class="row my-2">
                         <div class="col-md-3 logo">
-                            <img class="img-logo" src="{{ asset('img/logo.jpg') }}" alt="logo">
+                            <img class="img-logo" src="{{ asset('img/logo.png') }}" alt="logo">
                         </div>
                         <div class="col-md-6 search">
                                 <form class="form-inline my-2 my-lg-0">
@@ -42,14 +44,25 @@
                                 </form>
                         </div>
                         <div class="col-md-3 account-cart">
-                            <img class="img-account" src="{{ asset('img/giohang.png') }}" alt="logo" />   <span>  |  </span>
-                            <img class="img-account" src="{{ asset('img/account.png') }}" alt="logo">
+                          <a href=""><i class="fas fa-shopping-cart"> </i> Giỏ Hàng</a>|
+                          <a href="{{ route('loginuser') }}"><i class="fas fa-user"></i>Đăng Nhập</a>
+                          @if(Session::has('login') && Session::get('login') == true)
+                          @endif
+                          <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xin chào {{ Session::get('name') }} <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <div>
+                                    <a href="{{ Route('dangxuat') }}">Đăng Xuất</a>
+                                </div>
+                            </div>
+                          </div>
+                          
                         </div>
                     </div>
                 </div>
         </section>{{--  <end--header-->  --}}
         {{--  <!--menu--!>  --}}
-        <section class="clearfix mainmenu">
+        <section class="clearfix mainmenu my-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -89,12 +102,27 @@
         {{--  <!!--coppyright-->  --}}
         <section class="clearfix copyright bg-topbar border-top my-3">
                 <div class="container">
-                    coppyright @
+                    <div class="row">
+                        <div class="col-1">Địa chỉ</div>
+                        <div class="col-2">
+                                
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                
+                        </div>
+                        <div class="col-3">
+                            Fanpage 
+                        </div>
+
+                    </div>
+                    <div class="row-1">@Coppyright</div>
+                    
                 </div>
         </section>{{--  <!!--end--coppyright-->  --}}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

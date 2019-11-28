@@ -57,9 +57,9 @@ class ProductController extends Controller
         $row->pricesale=$request->pricesales;
         $row->status=$request->status;
 
-        $row->created_at=Carbon::now();
+        $row->created_at=Carbon::now('Asia/Ho_Chi_Minh');
         $row->created_by=$user_id;
-        $row->updated_at=Carbon::now();
+        $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
         $row->updated_by=$user_id;
 
 
@@ -107,7 +107,7 @@ class ProductController extends Controller
         $row->status=$request->status;
 
 
-        $row->updated_at=Carbon::now();
+        $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
         $row->updated_by=$user_id;
 
 
@@ -158,7 +158,7 @@ class ProductController extends Controller
         }else
         {
             $row->status=1;
-            $row->updated_at=Carbon::now();
+            $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
             $row->updated_by=$user_id;
         }
         $row->save();
@@ -173,7 +173,7 @@ class ProductController extends Controller
         }else
         {
             $row->status=0;
-            $row->updated_at=Carbon::now();
+            $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
             $row->updated_by=$user_id;
         }
         $row->save();
@@ -188,7 +188,7 @@ class ProductController extends Controller
         }else
         {
             $row->status=2;
-            $row->updated_at=Carbon::now();
+            $row->updated_at=Carbon::now('Asia/Ho_Chi_Minh');
             $row->updated_by=$user_id;
             $row->save();
             return redirect()->route("product_index")->with("message",["type"=>"success","msg"=>"Khôi Phục Thành Công"]);

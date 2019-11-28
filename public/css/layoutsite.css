@@ -9,12 +9,17 @@
     padding: 20px 0;
 }
 
-.header .logo .img-logo {
+.header .logo {
+    width: 80%;
+}
+
+.img-logo {
     width: 80%;
 }
 
 .account-cart {
     text-align: right;
+    font-size: 20px;
 }
 
 .img-account {
@@ -51,6 +56,51 @@
 
 /* content */
 
-.maincontent {
-    padding-top: 20px;
+.fas {
+    color: #007772;
+}
+
+.account-cart a {
+    color: #007772;
+    transition: 0.8s;
+}
+
+.account-cart a:hover {
+    color: red;
+}
+
+.introduce {
+    padding: 20px 0;
+}
+
+.col-1 {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.row {
+    line-height: 20px;
+}
+
+.row-1 {
+    text-align: center;
+    line-height: 20px;
+}
+
+.col-1,
+.col-2,
+.col-3 {
+    min-width: 380px;
+}
+
+.fa-facebook-square,
+.fa-youtube {
+    font-size: large;
+    padding: 10px;
+    color: white;
+}
+
+.form-control {
+    max-width: 250px;
+    text-align: center;
 }

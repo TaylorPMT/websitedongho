@@ -10,10 +10,10 @@ class PageController extends Controller
     //
     function gioithieu()
     {
-        echo "Đây Là Trang Giới Thiệu";
+       return view('frontend.introduce');
     }
     function lienhe()
     {
-        echo "Đây Là Trang Liên hệ";
+        return view('frontend.contact');
     }
 }

@@ -17,9 +17,14 @@ class AuthController extends Controller
     {   $name=$request->username;
         $pass=$request->password;
        $data=['name'=>$name,'password'=>$pass,'access'=>1];
+       $datauser=['name'=>$name,'password'=>$pass,'access'=>2];
        if(Auth::attempt($data))
        {
         return redirect()->route('Dashboard');
+       }
+       if(Auth::attempt($datauser))
+       {
+        return redirect()->route('user');
        }
        else
        {

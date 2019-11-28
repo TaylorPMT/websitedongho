@@ -13,6 +13,11 @@
 
 
 
+//route login user
+Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
+Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
+Route::get('dangxuat','backend\LoginUser@dangxuat')->name('dangxuat');
+    
 
 //route login
 Route::get('login','backend\AuthController@getlogin')->name('login');
@@ -53,21 +58,32 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
 
+    //route quản lý cate
 
-
+    Route::group(['prefix' => 'category'], function() {
+        Route::get('/','backend\CategoryContronller@index')->nanme('category_index');
+        //
     });
 
 
+ });
+
+
+
+
+
 });
-Route::get('{slug}','frontend\ProductController@detail');
+
 //page gioi thieu
 Route::get('page/gioi-thieu','page\PageController@gioithieu');
 //page tin tuc
 Route::get('page/lien-he','page\PageController@lienhe');
 //
 
-Route::get('/','frontend\HomeController@index');
+Route::get('/','frontend\HomeController@index')->name('user');
 Route::get('san-pham','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@index');
 
 Route::get('san-pham/{slug}','frontend\ProductController@category');
+Route::get('{slug}','frontend\ProductController@detail');
+
