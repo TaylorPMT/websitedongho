@@ -47,15 +47,15 @@
                         </div>
                         <div class="form-group">
                                 <label>Chi Tiết sản Phẩm</label>
-                               <textarea name="detail" class="form-control" rows="6" value="{{ old('detail') }}" ></textarea>
+                               <textarea name="detail" id="editor1" class="form-control" rows="6" value="{{ old('detail') }}" ></textarea>
                         </div>
                         <div class="form-group">
                                 <label>Mô Tả Seo</label>
-                                <textarea name="metadesc" class="form-control" rows="2" value="{{ old('metadesc') }}" ></textarea>
+                                <textarea name="metadesc"  class="form-control" rows="2" value="{{ old('metadesc') }}" ></textarea>
                         </div>
                         <div class="form-group">
                                 <label>Từ Khóa Seo</label>
-                                <textarea name="metakey" class="form-control" rows="2" value="{{ old('metakey') }}" ></textarea>
+                                <textarea name="metakey"  class="form-control" rows="2" value="{{ old('metakey') }}" ></textarea>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -116,6 +116,8 @@
     } );
 </script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script> CKEDITOR.replace('editor1'); </script>
 
 
 @endsection

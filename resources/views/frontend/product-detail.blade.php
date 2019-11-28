@@ -23,7 +23,7 @@
                             @includeIf('frontend.sildebar_category')
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-9">
                            <div class="row product-info">
                                {{--  <!!--Chi Tiết Sản Phẩm --!!>  --}}
 
@@ -41,7 +41,10 @@
 
                         </div>
                         <div class="row product-detail">
-                                <p>{{ $row->detail }}</p>
+                            @php
+                            echo $row->detail
+                            @endphp
+
                         </div>
                     {{--  <--!!Nếu không có sản phẩm cùn loại-->  --}}
                     @if (count($listother))

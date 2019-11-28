@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                           </div>
-                          
+
                         </div>
                     </div>
                 </div>
@@ -105,18 +105,18 @@
                     <div class="row">
                         <div class="col-1">Địa chỉ</div>
                         <div class="col-2">
-                                
+
                             <a href="#"><i class="fab fa-facebook-square"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
-                                
+
                         </div>
                         <div class="col-3">
-                            Fanpage 
+                            Fanpage
                         </div>
 
                     </div>
                     <div class="row-1">@Coppyright</div>
-                    
+
                 </div>
         </section>{{--  <!!--end--coppyright-->  --}}
 
@@ -126,6 +126,8 @@
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script> CKEDITOR.replace('editor1'); </script>
         @yield('session_footer')
   </body>
 </html>

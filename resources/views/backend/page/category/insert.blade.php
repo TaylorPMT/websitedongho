@@ -5,6 +5,7 @@
 
 {{--  <--!Vùng dataTables --!>  --}}
 <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css') }}" >
+{{-- ckeditor formart html- --}}
 
 @endsection
 
@@ -39,7 +40,7 @@
                     <div class="col-md-9">
                         <div class="form-group">
                             <label>Tên Loại sản Phẩm</label>
-                            <input name="name" class="form-control" type="text" value="{{ old('name') }}">
+                            <input name="name" class="form-control" type="text" value="{{ old('name') }}" >
                             @if ($errors->has('name'))
 
                             <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -52,7 +53,7 @@
                         </div>
                         <div class="form-group">
                                 <label>Từ Khóa Seo</label>
-                                <textarea name="metakey" class="form-control" rows="2" value="{{ old('metakey') }}" ></textarea>
+                                <textarea name="metakey"  id="editor1" class="form-control" rows="2" value="{{ old('metakey') }}"  ></textarea>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -87,6 +88,8 @@
     } );
 </script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script> CKEDITOR.replace('editor1'); </script>
 
 
 @endsection
