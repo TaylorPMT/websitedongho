@@ -48,7 +48,20 @@
                                 <div class="dropdown-divider"></div>
 
                               </div>
+
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Quản Lý Danh Mục Sản Phẩm
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{{ Route('index_category') }}">Danh sách sản phẩm</a>
+                                  <a class="dropdown-item" href="{{ Route('category_getinsert') }}">Thêm Sản Phẩm </a>
+                                  <div class="dropdown-divider"></div>
+
+                                </div>
+
+                              </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('logout') }}" tabindex="-1" aria-disabled="true">Thoát</a>
                             </li>
