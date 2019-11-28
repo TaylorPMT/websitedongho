@@ -53,14 +53,17 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
 
+    //route quản lý cate
+
+    Route::group(['prefix' => 'category'], function() {
+        Route::get('/','backend\CategoryContronller@index')->nanme('category_index');
+        //
+    });
 
 
  });
 
- Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
-     //
- });
 
 
 
