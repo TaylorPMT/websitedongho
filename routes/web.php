@@ -60,13 +60,24 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     //route quản lý cate
 
-    Route::group(['prefix' => 'category'], function() {
-        Route::get('/','backend\CategoryContronller@index')->nanme('category_index');
-        //
-    });
+
 
 
  });
+ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function () {
+    Route::get('/','backend\DashboardController@index')->name('Dashboard');
+    Route::group(['prefix' => 'category'], function () {
+
+        Route::get('/','backend\CategoryController@index')->name('index_category');
+
+        Route::get('insert','backend\CategoryController@getinsert')->name('category_getinsert');
+        Route::post('insert','backend\CategoryController@postinsert')->name('category_postinsert');
+
+    });
+
+});
+
+
 
 
 
