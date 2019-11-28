@@ -58,12 +58,13 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
 
-    //route quản lý cate
+
 
 
 
 
  });
+     //route quản lý cate
  Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function () {
     Route::get('/','backend\DashboardController@index')->name('Dashboard');
     Route::group(['prefix' => 'category'], function () {
@@ -82,6 +83,15 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
         Route::get('update/{id}','backend\CategoryController@getupdate')->name('category_getupdate');
 
         Route::post('update/{id}','backend\CategoryController@postupdate')->name('category_postupdate');
+
+        //delete category
+        Route::get('delete/{id}','backend\CategoryController@delete')->name('category_delete');
+
+        Route::get('deltrash/{id}','backend\CategoryController@deltrash')->name('category_deltrash');
+
+        Route::get('retrash/{id}','backend\CategoryController@retrash')->name('category_retrash');
+
+        Route::get('trash','backend\CategoryController@trash')->name('category_trash');
 
 
     });
