@@ -10,7 +10,8 @@
 
             @foreach ($product as $item)
             <div class="col-md-3">
-                    <div class="card w-100">
+                <div class="products-category">
+                    <div class="card">
                         <a href="{{ url($item->slug) }}">
                             <img src="{{ asset('img/product/'.$item->img)  }}" class="card-img-top" alt="...">
                         </a>
@@ -24,6 +25,7 @@
                             </div>
                             </div>
                         </div>
+                    </div>
 
 
 

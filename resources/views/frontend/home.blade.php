@@ -22,7 +22,7 @@
                 @if (count($listcategory))
                     @foreach ($listcategory as $catid)
 
-                            <h3>{{ $catid->name }} </h3>
+                            <h3 class="title-category">{{ $catid->name }} </h3>
                                 @includeIf('frontend.home-part',['catid'=>$catid->id])
 
                     @endforeach

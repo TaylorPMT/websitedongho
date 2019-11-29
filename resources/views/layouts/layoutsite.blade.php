@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css') }}"  >
     <link rel="stylesheet" href="{{asset('css/layoutsite.css') }}">
     <link rel="stylesheet" href="{{asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/Pacifico.css') }}">
 
           @yield('session_header')
   </head>
@@ -103,19 +104,37 @@
         <section class="clearfix copyright bg-topbar border-top my-3">
                 <div class="container">
                     <div class="row">
-                        <div class="col-1">Địa chỉ</div>
+                        <div class="col-1">
+                            <div class="title-copyright">Đồ Án WebSite</div>
+                                    <div class="sub-title">
+                                    Thành Viên Thực Hiện <br>
+                                Nguyễn Anh Nghĩa <br> Phạm Minh Thiện
+                                    </div>
+                        </div>
                         <div class="col-2">
+                            <div class="title-copyright">Information</div>
+                                    <div class="sub-title">
+                                            <a href="#"><i class="fab fa-facebook-square"></i></a> <br>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
 
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
 
                         </div>
                         <div class="col-3">
-                            Fanpage
+                           <div class="title-copyright">Fanpage</div>
                         </div>
 
                     </div>
-                    <div class="row-1">@Coppyright</div>
+
+
+                </div>
+        </section>{{--  <!!--end--coppyright-->  --}}
+        <section class="bg-topcoppyright border-top">
+                <div class="container">
+                        <div class="row-1">
+                           <div class="title-copyright"> Copyright 2019 © thien.phamminhstu@gmail.com | ThienDeveLoper</div>
+                        </div>
+
 
                 </div>
         </section>{{--  <!!--end--coppyright-->  --}}
