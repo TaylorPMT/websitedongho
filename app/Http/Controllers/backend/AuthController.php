@@ -22,10 +22,7 @@ class AuthController extends Controller
        {
         return redirect()->route('Dashboard');
        }
-       if(Auth::attempt($datauser))
-       {
-        return redirect()->route('user');
-       }
+      
        else
        {
            echo "Nhập sai rồi";

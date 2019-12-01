@@ -1,6 +1,7 @@
 body {
     font-size: 18px;
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Roboto', sans-serif;
 }
 
 .bg-topbar {
@@ -12,7 +13,6 @@ body {
 
 .bg-topcoppyright {
     background: black;
-    margin-top: -20px;
 }
 
 .header {
@@ -125,7 +125,7 @@ body {
 }
 
 .sub-title {
-    padding: 20px;
+    display: block;
 }
 
 .coppy-right {
@@ -140,7 +140,18 @@ body {
 } */
 
 
+/*header*/
+
+.input-seach {
+    min-width: 80% !important;
+}
+
+
 /*productss*/
+
+.products {
+    margin: 5px 5px;
+}
 
 .products-category {
     transition: box-shadow .3s;
@@ -161,4 +172,65 @@ body {
 
 .title-category:hover {
     color: red;
+}
+
+a {
+    color: #007772;
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.products-name {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.title-inner {
+    text-align: center;
+}
+
+
+/* Vùng Đồng Hồ Chính Hãng Home Page  */
+
+
+/*Icon*/
+
+.fa-500px,
+.fa-ticket-alt,
+.fa-hand-holding-usd,
+.fa-backward,
+.fa-gifts,
+.fa-bookmark {
+    color: #e6ecec;
+    font-size: 30px;
+    margin: auto;
+    display: inline-block;
+}
+
+span {
+    display: block;
+    border-radius: 50%;
+}
+
+.watch-des i {
+    background-color: #007772;
+    /* text-align: center; */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_watchdes {
+    text-align: center;
+    padding-top: 10%;
 }

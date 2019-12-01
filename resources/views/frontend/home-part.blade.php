@@ -6,10 +6,11 @@
     $list_catid=Library_my::category_listid($category_all,$catid,[$catid]);
     $product=Product::where(['status'=>1])->whereIn('catid',$list_catid)->orderBy('created_at')->take(8)->get();
 @endphp
-<div class="row products_category">
+
+<div class="row products_category ">
 
             @foreach ($product as $item)
-            <div class="col-md-3">
+            <div class="col-md-3 my-3">
                 <div class="products-category">
                     <div class="card">
                         <a href="{{ url($item->slug) }}">

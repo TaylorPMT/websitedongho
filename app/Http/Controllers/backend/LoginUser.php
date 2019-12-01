@@ -17,12 +17,13 @@ class LoginUser extends Controller
         $username = Request::input('username');
         $password = Request::input('password');
         $datauser=['name'=>$username,'password'=>$password,'access'=>2];
-        
-      
+
+
         if(Auth::attempt($datauser)){
+            $name=Auth::user()->fullname;
             Request::session()->put('loginuser', true);
-            Request::session()->put('name', 'fullname');
-            
+            Request::session()->put('name', $name);
+
             return redirect()->route('user');
         }
         else {
@@ -30,11 +31,12 @@ class LoginUser extends Controller
         }
     }
     function dangxuat(){
-       
+        $datauser=['name','password','access'=>2];
+
         if(Auth::check())
         {
             Auth::logout();
-            
+
         }
         Request::session()->flush();
         return view('frontend.loginuser');

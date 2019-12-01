@@ -15,14 +15,26 @@ class LoginAdminMiddleware
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {   if(Auth::check())
+    {
+        /*
+        if(Auth::check())
         {
             return $next($request);
         }
         else
         {
             return redirect()->route('login');
+        }*/
+        if (Auth::check()) {
+            $user=Auth::user();
+            if ($user->access==1)
+                return $next($request);
+            else
+                return redirect('/dangnhap');
         }
+        else
+            return redirect('/dangnhap');
+
 
     }
 }
