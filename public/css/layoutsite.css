@@ -1,8 +1,18 @@
+body {
+    font-size: 18px;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Roboto', sans-serif;
+}
+
 .bg-topbar {
     background: #007772;
     line-height: 36px;
     color: #f1f1f1;
     font-size: 12px;
+}
+
+.bg-topcoppyright {
+    background: black;
 }
 
 .header {
@@ -60,6 +70,13 @@
     color: #007772;
 }
 
+
+/* Category menu*/
+
+.list-group-item.active {
+    background-color: #007772;
+}
+
 .account-cart a {
     color: #007772;
     transition: 0.8s;
@@ -100,7 +117,120 @@
     color: white;
 }
 
-.form-control {
+.title-copyright {
+    font-size: 20px;
+    color: #f1f1f1;
+    padding: 10px 10px;
+    font-weight: bold;
+}
+
+.sub-title {
+    display: block;
+}
+
+.coppy-right {
+    background-color: darkgreen;
+    min-height: 30px;
+}
+
+
+/* .form-control {
     max-width: 250px;
     text-align: center;
+} */
+
+
+/*header*/
+
+.input-seach {
+    min-width: 80% !important;
+}
+
+
+/*productss*/
+
+.products {
+    margin: 5px 5px;
+}
+
+.products-category {
+    transition: box-shadow .3s;
+    background: #fff;
+    transition: box-shadow .3s;
+    background: #fff;
+    float: left;
+}
+
+.products-category:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    border: 2px solid #007772;
+}
+
+.title-category {
+    color: #007772;
+}
+
+.title-category:hover {
+    color: red;
+}
+
+a {
+    color: #007772;
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.products-name {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.title-inner {
+    text-align: center;
+}
+
+
+/* Vùng Đồng Hồ Chính Hãng Home Page  */
+
+
+/*Icon*/
+
+.fa-500px,
+.fa-ticket-alt,
+.fa-hand-holding-usd,
+.fa-backward,
+.fa-gifts,
+.fa-bookmark {
+    color: #e6ecec;
+    font-size: 30px;
+    margin: auto;
+    display: inline-block;
+}
+
+span {
+    display: block;
+    border-radius: 50%;
+}
+
+.watch-des i {
+    background-color: #007772;
+    /* text-align: center; */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_watchdes {
+    text-align: center;
+    padding-top: 10%;
 }

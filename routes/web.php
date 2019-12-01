@@ -17,7 +17,7 @@
 Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
 Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
 Route::get('dangxuat','backend\LoginUser@dangxuat')->name('dangxuat');
-    
+
 
 //route login
 Route::get('login','backend\AuthController@getlogin')->name('login');
@@ -58,12 +58,13 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
 
-    //route quản lý cate
+
 
 
 
 
  });
+     //route quản lý cate
  Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function () {
     Route::get('/','backend\DashboardController@index')->name('Dashboard');
     Route::group(['prefix' => 'category'], function () {
@@ -72,6 +73,26 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
         Route::get('insert','backend\CategoryController@getinsert')->name('category_getinsert');
         Route::post('insert','backend\CategoryController@postinsert')->name('category_postinsert');
+
+        //update status
+        Route::get('status/{id}','backend\CategoryController@status')->name('category_status');
+
+        Route::get('updatestatus/{id}','backend\CategoryController@updatestatus')->name('category_updatestatus');
+
+        //update category
+        Route::get('update/{id}','backend\CategoryController@getupdate')->name('category_getupdate');
+
+        Route::post('update/{id}','backend\CategoryController@postupdate')->name('category_postupdate');
+
+        //delete category
+        Route::get('delete/{id}','backend\CategoryController@delete')->name('category_delete');
+
+        Route::get('deltrash/{id}','backend\CategoryController@deltrash')->name('category_deltrash');
+
+        Route::get('retrash/{id}','backend\CategoryController@retrash')->name('category_retrash');
+
+        Route::get('trash','backend\CategoryController@trash')->name('category_trash');
+
 
     });
 

@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <a class="btn btn-sm btn-success" href="{{ route('category_getinsert') }}"><i class="fas fa-plus"> Thêm Danh Sách Sản Phẩm</i> </a>
-                            <a class="btn btn-sm btn-danger" href="{{ route('product_trash') }}"><i class="fas fa-trash-alt">Thùng Rác</i>
+                            <a class="btn btn-sm btn-danger" href="{{ route('category_trash') }}"><i class="fas fa-trash-alt">Thùng Rác</i>
 
                             </a>
                         </div>
@@ -57,15 +57,15 @@
                                <td class="text-info">{{ $row->created_at }}</td>
                                <td>
                                    @if ($row->status==1)
-                                   <a class="btn btn-sm btn-success" href="{{ route('product_status',['id'=>$row->id]) }}"><i class="fas fa-toggle-on"></i></a>
+                                   <a class="btn btn-sm btn-success" href="{{ route('category_status',['id'=>$row->id]) }}"><i class="fas fa-toggle-on"></i></a>
                                    @else
 
-                                   <a class="btn btn-sm btn-danger" href="{{ route('product_updatestatus',['id'=>$row->id]) }}"><i class="fas fa-toggle-off"></i></a>
+                                   <a class="btn btn-sm btn-danger" href="{{ route('category_updatestatus',['id'=>$row->id]) }}"><i class="fas fa-toggle-off"></i></a>
 
                                    @endif
 
-                                   <a class="btn btn-sm btn-info" href="{{ route('product_getupdate',['id'=>$row->id]) }}"><i class="far fa-edit"></i></a>
-                                   <a class="btn btn-sm btn-danger" href="{{ route('product_deltrash',['id'=>$row->id]) }}"><i class="fas fa-trash-alt"></i></a>
+                                   <a class="btn btn-sm btn-info" href="{{ route('category_getupdate',['id'=>$row->id]) }}"><i class="far fa-edit"></i></a>
+                                   <a class="btn btn-sm btn-danger" href="{{ route('category_deltrash',['id'=>$row->id]) }}"><i class="fas fa-trash-alt"></i></a>
                                </td>
                                <td>{{ $row->id }}</td>
                            </tr>

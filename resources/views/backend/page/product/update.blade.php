@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                                 <label>Chi Tiết sản Phẩm</label>
-                               <textarea name="detail" class="form-control" rows="6"  >{{ old('detail',$row->detail) }}</textarea>
+                               <textarea name="detail" class="form-control" rows="6" id="editor1"  >{{ old('detail',$row->detail) }}</textarea>
                         </div>
                         <div class="form-group">
                                 <label>Mô Tả Seo</label>
@@ -123,7 +123,8 @@
 </script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 
-
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script> CKEDITOR.replace('editor1'); </script>
 @endsection
 
 

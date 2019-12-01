@@ -55,8 +55,8 @@
                                   Quản Lý Danh Mục Sản Phẩm
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ Route('index_category') }}">Danh sách sản phẩm</a>
-                                  <a class="dropdown-item" href="{{ Route('category_getinsert') }}">Thêm Sản Phẩm </a>
+                                  <a class="dropdown-item" href="{{ Route('index_category') }}">Danh sách Loại sản phẩm</a>
+                                  <a class="dropdown-item" href="{{ Route('category_getinsert') }}">Thêm  Loại Sản Phẩm </a>
                                   <div class="dropdown-divider"></div>
 
                                 </div>

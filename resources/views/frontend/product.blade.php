@@ -34,7 +34,8 @@
                                     </a>
                                         <div class="card-body">
                                                 <a href="{{ url($row->slug) }}">
-                                                    <h5 class="card-title">{{$row->name }}</h5>
+                                                    <h5 class="card-title"
+                                                >{{$row->name }}</h5>
                                                 </a>
                                             <h5 class="card-price">{{ number_format($row->price) }}</h5>
                                             <p class="card-text"></p>
