@@ -13,6 +13,7 @@
 
 
 
+
 //route login user
 Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
 Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
@@ -108,7 +109,7 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
 //page gioi thieu
 Route::get('page/gioi-thieu','page\PageController@gioithieu');
-//page tin tuc
+//page lien he
 Route::get('page/lien-he','page\PageController@lienhe');
 //
 
@@ -118,4 +119,6 @@ Route::get('san-pham/{slug}','frontend\ProductController@index');
 
 Route::get('san-pham/{slug}','frontend\ProductController@category');
 Route::get('{slug}','frontend\ProductController@detail');
-
+//page tin tuc
+Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
+Route::get('page/tin-tuc/{slug}','page\PageController@detail');

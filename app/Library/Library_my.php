@@ -27,5 +27,18 @@ namespace App\Library;
         }
         return $arr;
     }
+    public static function newsid($list, $topid,$arr)
+    {
+        foreach ($list as $row)
+        {
+            if ($row->topid==$topid)
+            {
+                $arr[]=$row->topid;
+                Library_my::newsid($list,$row->topid,$arr);
+            }
+        } 
+        return $arr;
+    }
+   
  }
 
