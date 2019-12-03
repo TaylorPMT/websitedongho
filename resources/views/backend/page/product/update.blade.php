@@ -80,7 +80,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Số Lượng</label>
-                                <input name="number" class="form-control" type="number" min="1" value="1" value={{ old('number',$row->number) }}>
+                                <input name="soluong" class="form-control" type="number" min="1" value="1" value={{ old('number',$row->number) }}>
                             </div>
                             <div class="form-group">
                                     <label>Giá Bán</label>

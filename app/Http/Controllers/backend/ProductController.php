@@ -52,7 +52,7 @@ class ProductController extends Controller
         //larevel
         $row->metadesc=html_entity_decode($request->metadesc);
         $row->metakey=html_entity_decode($request->metakey);
-        $row->number=$request->number;
+        $row->number=$request->soluong;
         $row->price=$request->price;
         $row->pricesale=$request->pricesales;
         $row->status=$request->status;
@@ -101,7 +101,7 @@ class ProductController extends Controller
         //larevel
         $row->metadesc=html_entity_decode($request->metadesc);
         $row->metakey=html_entity_decode($request->metakey);
-        $row->number=$request->number;
+        $row->number=$request->soluong;
         $row->price=$request->price;
         $row->pricesale=$request->pricesales;
         $row->status=$request->status;
