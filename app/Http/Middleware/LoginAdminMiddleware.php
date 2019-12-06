@@ -30,10 +30,10 @@ class LoginAdminMiddleware
             if ($user->access==1)
                 return $next($request);
             else
-                return redirect('/dangnhap');
+            return redirect()->route('loginuser');
         }
         else
-            return redirect('/dangnhap');
+            return redirect()->route('loginuser');
 
 
     }

@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -106,35 +105,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
             Route::get('trash', 'backend\CategoryController@trash')->name('category_trash');
         });
     });
-});
-//quản lý tin tức
-Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
-    Route::get('/', 'backend\DashboardController@index')->name('Dashboard');
-    Route::group(['prefix' => 'news'], function () {
 
-        Route::get('/', 'backend\NewsController@index')->name('index_news');
 
-        Route::get('insert', 'backend\NewsController@getinsert')->name('getinsert_news');
-        Route::post('insert', 'backend\NewsController@postinsert')->name('postinsert_news');
+ });
 
-        //update status
-        Route::get('status/{id}', 'backend\CategoryController@status')->name('category_status');
-
-        Route::get('updatestatus/{id}', 'backend\CategoryController@updatestatus')->name('category_updatestatus');
-
-        //update category
-        Route::get('update/{id}', 'backend\CategoryController@getupdate')->name('category_getupdate');
-
-        Route::post('update/{id}', 'backend\CategoryController@postupdate')->name('category_postupdate');
-
-        //delete category
-        Route::get('delete/{id}', 'backend\CategoryController@delete')->name('category_delete');
-
-        Route::get('deltrash/{id}', 'backend\CategoryController@deltrash')->name('category_deltrash');
-
-        Route::get('retrash/{id}', 'backend\CategoryController@retrash')->name('category_retrash');
-
-        Route::get('trash', 'backend\CategoryController@trash')->name('category_trash');
-    });
-});
 
