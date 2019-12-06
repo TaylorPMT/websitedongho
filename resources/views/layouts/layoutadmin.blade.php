@@ -68,8 +68,8 @@
                                   Quản Lý Tin Tức
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ Route('index_category') }}">Danh Sách Các Tin Tức</a>
-                                  <a class="dropdown-item" href="{{ Route('getinsert_news') }}">Thêm  Tin Tức </a>
+                                  <a class="dropdown-item" href="">Danh Sách Các Tin Tức</a>
+                                  <a class="dropdown-item" href="">Thêm  Tin Tức </a>
                                   <div class="dropdown-divider"></div>
 
                                 </div>

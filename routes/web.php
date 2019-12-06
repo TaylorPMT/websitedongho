@@ -37,7 +37,7 @@ Route::get('san-pham', 'frontend\ProductController@index');
 Route::get('san-pham/{slug}', 'frontend\ProductController@index');
 
 Route::get('san-pham/{slug}', 'frontend\ProductController@category');
-Route::get('{slug}', 'frontend\ProductController@detail');
+
 //page tin tuc
 Route::get('page/tin-tuc', 'page\PageController@tintuc')->name('tintuc');
 Route::get('page/tin-tuc/{slug}', 'page\PageController@detail');
@@ -74,10 +74,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
         Route::get('retrash/{id}', 'backend\ProductController@retrash')->name('product_retrash');
 
         Route::get('delete/{id}', 'backend\ProductController@delete')->name('product_delete');
-    });
-    //route quản lý cate
-    Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
-        Route::get('/', 'backend\DashboardController@index')->name('Dashboard');
+
+        //route quản lý cate
         Route::group(['prefix' => 'category'], function () {
 
             Route::get('/', 'backend\CategoryController@index')->name('index_category');
@@ -105,8 +103,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
             Route::get('trash', 'backend\CategoryController@trash')->name('category_trash');
         });
     });
-
+    
+ 
 
  });
-
+ Route::get('{slug}', 'frontend\ProductController@detail');
 
