@@ -68,7 +68,7 @@
                                   Quản Lý Tin Tức
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="">Danh Sách Các Tin Tức</a>
+                                  <a class="dropdown-item" href="{{ Route('index_news') }}">Danh Sách Các Tin Tức</a>
                                   <a class="dropdown-item" href="">Thêm  Tin Tức </a>
                                   <div class="dropdown-divider"></div>
 

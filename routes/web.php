@@ -75,8 +75,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
 
         Route::get('delete/{id}', 'backend\ProductController@delete')->name('product_delete');
 
+    });
+
         //route quản lý cate
-        Route::group(['prefix' => 'category'], function () {
+    Route::group(['prefix' => 'category'], function () {
 
             Route::get('/', 'backend\CategoryController@index')->name('index_category');
 
@@ -101,9 +103,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'LoginAdmin'], function () {
             Route::get('retrash/{id}', 'backend\CategoryController@retrash')->name('category_retrash');
 
             Route::get('trash', 'backend\CategoryController@trash')->name('category_trash');
+ 
+        
         });
-    });
+    Route::group(['prefix' => 'news'], function () {
+            Route::get('/','backend\NewsController@index')->name('index_news');
+        
+  
+  
     
+    });
+   
  
 
  });

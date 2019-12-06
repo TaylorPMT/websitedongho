@@ -22,8 +22,8 @@
                         </strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a class="btn btn-sm btn-success" href="{{ route('postinsert_news') }}"><i class="fas fa-plus"> Thêm Danh Sách Tin Tức</i> </a>
-                            <a class="btn btn-sm btn-danger" href="{{ route('category_trash') }}"><i class="fas fa-trash-alt">Thùng Rác</i>
+                            <a class="btn btn-sm btn-success" href="{{ route('') }}"><i class="fas fa-plus"> Thêm Danh Sách Tin Tức</i> </a>
+                             <a class="btn btn-sm btn-danger" href="{{ route('category_deltrash') }}"><i class="fas fa-trash-alt">Thùng Rác</i> 
 
                             </a>
                         </div>
