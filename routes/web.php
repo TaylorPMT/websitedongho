@@ -41,7 +41,7 @@ Route::get('san-pham','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@index');
 
 Route::get('san-pham/{slug}','frontend\ProductController@category');
-Route::get('{slug}','frontend\ProductController@detail');
+
 //page tin tuc
 Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
 Route::get('page/tin-tuc/{slug}','page\PageController@detail');
@@ -114,3 +114,4 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
  });
 
 });
+Route::get('{slug}','frontend\ProductController@detail');
