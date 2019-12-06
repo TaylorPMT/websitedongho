@@ -64,7 +64,7 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+/* User đăng nhập*/
     'providers' => [
         'users' => [
             'driver' => 'eloquent',

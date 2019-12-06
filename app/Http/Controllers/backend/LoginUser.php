@@ -16,22 +16,24 @@ class LoginUser extends Controller
     function postdangnhap(){
         $username = Request::input('username');
         $password = Request::input('password');
-        $datauser=['name'=>$username,'password'=>$password,'access'=>2];
+        $datauser=['name'=>$username,'password'=>$password];
 
 
-        if(Auth::attempt($datauser)){
-            $name=Auth::user()->fullname;
-            Request::session()->put('loginuser', true);
-            Request::session()->put('name', $name);
+            if(Auth::attempt($datauser))
+            {
+                $name=Auth::user()->fullname;
+                Request::session()->put('loginuser', true);
+                Request::session()->put('name', $name);
 
-            return redirect()->route('user');
+                return redirect()->route('user');
+            }
+            else {
+                return redirect()->route('loginuser')->with('fail', 'Đăng nhập không thành công, sai username hoặc password.');
         }
-        else {
-            return redirect()->route('loginuser')->with('fail', 'Đăng nhập không thành công, sai username hoặc password.');
-        }
+
     }
     function dangxuat(){
-        $datauser=['name','password','access'=>2];
+
 
         if(Auth::check())
         {
@@ -39,6 +41,6 @@ class LoginUser extends Controller
 
         }
         Request::session()->flush();
-        return view('frontend.loginuser');
+        return redirect()->route('loginuser')->with('fail', 'Đăng Xuất thành công');
     }
 }

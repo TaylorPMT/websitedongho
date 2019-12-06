@@ -45,9 +45,11 @@ Route::get('{slug}','frontend\ProductController@detail');
 //page tin tuc
 Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
 Route::get('page/tin-tuc/{slug}','page\PageController@detail');
+
+//Admin
 Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
     //
-    Route::get('/','backend\DashboardController@index')->name('Dashboard');
+    Route::get('','backend\DashboardController@index')->name('Dashboard');
 
 
     Route::group(['prefix' => 'product'], function() {
@@ -78,13 +80,7 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
 
 
-
-
-
- });
-     //route quản lý cate
- Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function () {
-    Route::get('/','backend\DashboardController@index')->name('Dashboard');
+    // Route quản lý cate
     Route::group(['prefix' => 'category'], function () {
 
         Route::get('/','backend\CategoryController@index')->name('index_category');
@@ -114,7 +110,7 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
     });
 
-});
 
+ });
 
 });
