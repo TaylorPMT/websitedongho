@@ -52,36 +52,36 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
     Route::get('','backend\DashboardController@index')->name('Dashboard');
 
 
-    Route::group(['prefix' => 'product'], function() {
+Route::group(['prefix' => 'product'], function() {
         //
-    Route::get('/','backend\ProductController@index')->name('product_index');
+                Route::get('/','backend\ProductController@index')->name('product_index');
 
-    Route::get('trash','backend\ProductController@trash')->name('product_trash');
+                Route::get('trash','backend\ProductController@trash')->name('product_trash');
 
-    Route::post('insert','backend\ProductController@postinsert')->name('product_postinsert');
-    Route::get('insert','backend\ProductController@getinsert')->name('product_getinsert');
+                Route::post('insert','backend\ProductController@postinsert')->name('product_postinsert');
+                Route::get('insert','backend\ProductController@getinsert')->name('product_getinsert');
 
 
 
-        //update product
-    Route::get('update/{id}','backend\ProductController@getupdate')->name('product_getupdate');
+                    //update product
+                Route::get('update/{id}','backend\ProductController@getupdate')->name('product_getupdate');
 
-    Route::post('update/{id}','backend\ProductController@postupdate')->name('product_postupdate');
+                Route::post('update/{id}','backend\ProductController@postupdate')->name('product_postupdate');
 
-    Route::get('status/{id}','backend\ProductController@status')->name('product_status');
+                Route::get('status/{id}','backend\ProductController@status')->name('product_status');
 
-    Route::get('updatestatus/{id}','backend\ProductController@updatestatus')->name('product_updatestatus');
+                Route::get('updatestatus/{id}','backend\ProductController@updatestatus')->name('product_updatestatus');
 
-    Route::get('deltrash/{id}','backend\ProductController@deltrash')->name('product_deltrash');
+                Route::get('deltrash/{id}','backend\ProductController@deltrash')->name('product_deltrash');
 
-    Route::get('retrash/{id}','backend\ProductController@retrash')->name('product_retrash');
+                Route::get('retrash/{id}','backend\ProductController@retrash')->name('product_retrash');
 
-    Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
-
+                Route::get('delete/{id}','backend\ProductController@delete')->name('product_delete');
+    });
 
 
     // Route quản lý cate
-    Route::group(['prefix' => 'category'], function () {
+Route::group(['prefix' => 'category'], function () {
 
         Route::get('/','backend\CategoryController@index')->name('index_category');
 
@@ -106,11 +106,6 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
         Route::get('retrash/{id}','backend\CategoryController@retrash')->name('category_retrash');
 
         Route::get('trash','backend\CategoryController@trash')->name('category_trash');
-
-
-    });
-
-
  });
 
 });
