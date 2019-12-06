@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,22 @@ Route::get('login','backend\AuthController@getlogin')->name('login');
 Route::post('login','backend\AuthController@postlogin')->name('postlogin');
 //route logou
 Route::get('logout','backend\AuthController@logout')->name('logout');
+
+//page gioi thieu
+Route::get('page/gioi-thieu','page\PageController@gioithieu');
+//page lien he
+Route::get('page/lien-he','page\PageController@lienhe');
+//
+
+Route::get('/','frontend\HomeController@index')->name('user');
+Route::get('san-pham','frontend\ProductController@index');
+Route::get('san-pham/{slug}','frontend\ProductController@index');
+
+Route::get('san-pham/{slug}','frontend\ProductController@category');
+Route::get('{slug}','frontend\ProductController@detail');
+//page tin tuc
+Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
+Route::get('page/tin-tuc/{slug}','page\PageController@detail');
 /* Route admin */
 
 
@@ -107,18 +123,3 @@ Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
 
 });
 
-//page gioi thieu
-Route::get('page/gioi-thieu','page\PageController@gioithieu');
-//page lien he
-Route::get('page/lien-he','page\PageController@lienhe');
-//
-
-Route::get('/','frontend\HomeController@index')->name('user');
-Route::get('san-pham','frontend\ProductController@index');
-Route::get('san-pham/{slug}','frontend\ProductController@index');
-
-Route::get('san-pham/{slug}','frontend\ProductController@category');
-Route::get('{slug}','frontend\ProductController@detail');
-//page tin tuc
-Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
-Route::get('page/tin-tuc/{slug}','page\PageController@detail');
