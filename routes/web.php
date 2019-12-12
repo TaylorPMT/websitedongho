@@ -107,6 +107,27 @@ Route::group(['prefix' => 'category'], function () {
 
         Route::get('trash','backend\CategoryController@trash')->name('category_trash');
  });
+Route::group(['prefix' => 'news'], function () {
+    Route::get('/','backend\NewsController@index')->name('index_news');
+    //Thêm tin tức
+    Route::get('insert','backend\NewsController@getinsert')->name('news_getinsert');
+    Route::post('insert','backend\NewsController@postinsert')->name('news_postinsert');
+    
+    Route::get('trash','backend\NewsController@trash')->name('news_trash');
+    Route::get('deltrash/{id}','backend\NewsController@deltrash')->name('news_deltrash');
+    Route::get('delete/{id}','backend\NewsController@delete')->name('news_delete');
 
+      
+
+        Route::get('retrash/{id}','backend\NewsController@retrash')->name('news_retrash');
+        //update tin tuc
+        Route::get('update/{id}','backend\NewsController@getupdate')->name('news_getupdate');
+
+        Route::post('update/{id}','backend\NewsController@postupdate')->name('news_postupdate');
+        
+        Route::get('status/{id}','backend\NewsController@status')->name('news_status');
+
+        Route::get('updatestatus/{id}','backend\NewsController@updatestatus')->name('news_updatestatus');
+});
 });
 Route::get('{slug}','frontend\ProductController@detail');
