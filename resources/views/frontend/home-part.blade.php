@@ -22,7 +22,12 @@
                                     </a>
                                 <h5 class="card-price">{{ number_format($item->price) }}</h5>
                                 <p class="card-text">mô tả</p>
-                                <a href="#" class="form-control btn btn-primary">Đặt Mua</a>
+                                @if (Session::get('name')!=null)
+                                <a href="{{ Route('cart-add',['id'=>$item->id]) }}" class="form-control btn btn-primary">Đặt Mua</a>
+                                @else
+                                <a href="{{ Route('loginuser') }}" class="form-control btn btn-primary">Đặt Mua</a>
+                                @endif
+
                             </div>
                             </div>
                         </div>

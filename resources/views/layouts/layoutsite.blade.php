@@ -1,3 +1,9 @@
+@php
+
+use App\Library\Cart;
+@endphp
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,7 +56,10 @@
                           <div class="dropdown" >
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="user-name">Xin Chào {{ Session::get('name') }}</span> <span class="caret"></span></a>
                             <div class="dropdown-menu">
-                                <div> <a href=""><i class="fas fa-shopping-cart"> </i> Giỏ Hàng</a></div>
+                                <div>
+                                     <a href="{{ Route('cart-view') }}"><i class="fas fa-shopping-cart"></i>
+                                 Giỏ Hàng ({{ $cart->total_quanlity}})
+                            ({{ number_format($cart->total_price) }})VNĐ </a></div>
                                 <div>
                                     <a href="{{ Route('dangxuat') }}">Đăng Xuất</a>
                                 </div>
