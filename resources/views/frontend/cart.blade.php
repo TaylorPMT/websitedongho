@@ -18,7 +18,8 @@
             <div class="container">
                 <div class="row">
                     <h3 class="text-center text-warning">Giỏ Hàng Của Bạn </h3>
-                    <form action="" method=""></form>
+                    <form action="{{ Route('done-cart') }}" method="POST">
+                        @csrf();
                         <table class="table table-bordered">
                                 <thead>
                                   <tr>
@@ -65,9 +66,15 @@
                                 </tbody>
 
                               </table>
-                    </form>
+                    <p style="
+                    margin: auto;
+                    text-align: center;">
+                    <span  style="color: #007772;font-weight: bold;" >Tổng Cộng :  {{  number_format($cart->total_price)}} VNĐ</span>
+                    <br>
+                    <button type="submit" class="btn btn-success">Đặt Hàng</button>
+                </form>
+                 </p>
 
-                    <button class="btn btn-success">Đặt Hàng</button>
                 </div>
 
             </div>

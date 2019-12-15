@@ -189,6 +189,7 @@ a:hover {
 
 .card-title {
     text-align: center;
+    font-weight: bold;
 }
 
 .title-inner {

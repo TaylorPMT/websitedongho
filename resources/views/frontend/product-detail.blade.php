@@ -34,8 +34,11 @@
                                 <h5>Mô tả sản phẩm</h5>
                                 <p>{{ $row->metadesc}}</p>
                                 <div class="form-inline">
-                                  <input type="number" min="1" value="1" class="form-control" >
-                                  <button type="button" class="btn btn-sm btn-success">Thêm Vào Giỏ Hàng</button>
+                                    @if (Session::get('name')!=null)
+                                    <a href="{{ Route('cart-add',['id'=>$row->id]) }}" class="form-control btn btn-primary">Đặt Mua</a>
+                                    @else
+                                    <a href="{{ Route('loginuser') }}" class="form-control btn btn-primary">Đặt Mua</a>
+                                    @endif
                                 </div>
                                </div>
 

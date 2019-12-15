@@ -20,8 +20,8 @@
                                     <a href="{{ url($item->slug) }}">
                                         <h5 class="card-title">{{ $item->name }}</h5>
                                     </a>
-                                <h5 class="card-price">{{ number_format($item->price) }}</h5>
-                                <p class="card-text">mô tả</p>
+                                <h5 style="color: #007772;">{{ number_format($item->price) }} VNĐ</h5>
+
                                 @if (Session::get('name')!=null)
                                 <a href="{{ Route('cart-add',['id'=>$item->id]) }}" class="form-control btn btn-primary">Đặt Mua</a>
                                 @else

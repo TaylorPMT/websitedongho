@@ -72,3 +72,9 @@ body {
 .form-group:hover {
     color: red;
 }
+
+.total-shopping {
+    margin: auto;
+    text-align: center;
+    padding-top: 1%;
+}

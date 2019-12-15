@@ -118,5 +118,5 @@ Route::group(['prefix' => 'cart'], function () {
     Route::get('clear','backend\CartController@clear')->name('cart-clear');
     //view giỏ hàng
     Route::get('view','backend\CartController@view')->name('cart-view');
-
+    Route::post('store','backend\CartController@store')->name('done-cart');
 });
