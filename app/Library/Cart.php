@@ -52,7 +52,7 @@ class Cart
      {
         if(isset($this->items[$id]))
         {
-            unset($this->items[$product->id]);
+            unset($this->items[$id]);
         }
         session(['cart'=>$this->items]);
      }
@@ -60,7 +60,7 @@ class Cart
      {
         if(isset($this->items[$id]))
         {
-            $this->items[$product->id]['quantity']+=$quantity;
+            $this->items[$id]['quantity']=$quantity;
 
         }
         session(['cart'=>$this->items]);

@@ -1,8 +1,5 @@
 {{--  <!!--view-->  --}}
-@php
-use Illuminate\Support\Carbon;
 
-@endphp
 
 
 @extends('layouts.layoutsite')
@@ -26,43 +23,41 @@ use Illuminate\Support\Carbon;
                                 <thead>
                                   <tr>
 
-                                    <th scope="col">#</th>
+                                    <th scope="col">STT</th>
                                     <th scope="col">Hình Ảnh Sản Phẩm</th>
                                     <th scope="col">Tên Sản Phẩm</th>
                                     <th scope="col">Số Lượng</th>
+                                    <th scope="col">Đơn giá</th>
                                     <th scope="col">Thành Tiền</th>
+                                    <th scope="col"></th>
 
                                   </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i=1;
+                                    @endphp
+                                  @foreach ($cart->items as $item)
                                   <tr>
-                                    <th scope="row">1</th>
-                                    <td></td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td></td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td>@twitter</td>
-                                    <td colspan="2">Larry the Bird</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">4</th>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                  </tr>
+                                    {{--  shopping cart array list  --}}
+                                      <th scope="row">{{ $i++ }}</th>
+                                      <td>{{ $item['img'] }}</td>
+                                      <td>{{ $item['name'] }}</td>
+                                      <td>
+                                          <form action="{{ Route('cart-update',['id'=>$item['id']]) }}" method="GET">
+                                               <input type="number" name="quantity" value="{{ $item['quantity'] }}">
+                                               <input type="submit">
+                                          </form>
+                                      </td>
+                                      <td>{{ number_format($item['price']) }} VNĐ</td>
+                                      <td>{{ number_format($item['price']*$item['quantity'] )}} VNĐ</td>
+
+                                      <td><a href="{{ Route('cart-remove',['id'=>$item['id']]) }}"><i class="fas fa-times btn btn-danger"></i></a></td>
+                                    </tr>
+                                  @endforeach
+
+
+
 
                                 </tbody>
 

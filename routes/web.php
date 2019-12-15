@@ -110,10 +110,11 @@ Route::group(['prefix' => 'category'], function () {
 
 });
 Route::get('{slug}','frontend\ProductController@detail');
+
 Route::group(['prefix' => 'cart'], function () {
     Route::get('add/{id}','backend\CartController@add')->name('cart-add');
     Route::get('remove/{id}','backend\CartController@remove')->name('cart-remove');
-    Route::get('update/{id}/{quantity}','backend\CartController@update')->name('cart-update');
+    Route::get('update/{id}','backend\CartController@update')->name('cart-update');
     Route::get('clear','backend\CartController@clear')->name('cart-clear');
     //view giỏ hàng
     Route::get('view','backend\CartController@view')->name('cart-view');

@@ -17,7 +17,7 @@ class CartController extends Controller
         //gọi hàm lại
        $cart->add($product);
 
-      dd(session('cart'));
+
 
        return redirect()->back();
     }
@@ -26,8 +26,8 @@ class CartController extends Controller
         $cart->remove($id);
         return redirect()->back();
     }
-    public function update(Cart $cart ,$id ,$quantity)
-    {
+    public function update(Cart $cart ,$id)
+    {      $quantity=request()->quantity ?request()->quantity:1;
         $cart->update($id,$quantity);
         return redirect()->back();
     }
