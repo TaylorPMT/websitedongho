@@ -17,7 +17,7 @@
         <section class="clearfix maincontent">
             <div class="container">
                 <div class="row">
-                    <h3 class="text-center text-warning">Giỏ Hàng </h3>
+                    <h3 class="text-center text-warning">Giỏ Hàng Của Bạn </h3>
                     <form action="" method=""></form>
                         <table class="table table-bordered">
                                 <thead>
@@ -41,12 +41,15 @@
                                   <tr>
                                     {{--  shopping cart array list  --}}
                                       <th scope="row">{{ $i++ }}</th>
-                                      <td>{{ $item['img'] }}</td>
+                                      <td><img class="img-fluid img-thumbnail" src="{{ asset('img/product/'.$item['img']) }}"></td>
                                       <td>{{ $item['name'] }}</td>
                                       <td>
                                           <form action="{{ Route('cart-update',['id'=>$item['id']]) }}" method="GET">
-                                               <input type="number" name="quantity" value="{{ $item['quantity'] }}">
-                                               <input type="submit">
+
+                                            <span >
+                                                <input type="number" name="quantity" value="{{ $item['quantity'] }}" class="small">
+                                               <button type="submit" class="btn-success">Cập Nhật</button>
+                                            </span>
                                           </form>
                                       </td>
                                       <td>{{ number_format($item['price']) }} VNĐ</td>
