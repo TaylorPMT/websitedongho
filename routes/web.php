@@ -107,8 +107,12 @@ Route::group(['prefix' => 'category'], function () {
 
         Route::get('trash','backend\CategoryController@trash')->name('category_trash');
  });
+ Route::group(['prefix' => 'order'], function () {
+    Route::get('/','backend\OrderController@index')->name('index-order');
+});
 
 });
+
 Route::get('{slug}','frontend\ProductController@detail');
 
 Route::group(['prefix' => 'cart'], function () {
@@ -119,4 +123,6 @@ Route::group(['prefix' => 'cart'], function () {
     //view giỏ hàng
     Route::get('view','backend\CartController@view')->name('cart-view');
     Route::post('store','backend\CartController@store')->name('done-cart');
+
 });
+

@@ -18,9 +18,9 @@
             <div class="container">
                 <div class="row">
                     <h3 class="text-center text-warning">Giỏ Hàng Của Bạn </h3>
-                    <form action="{{ Route('done-cart') }}" method="POST">
-                        @csrf();
-                        <table class="table table-bordered">
+
+                    <table id="myTable" class="table table-hover table-striped my-5">
+                            @includeIf('backend.modules.message')
                                 <thead>
                                   <tr>
 
@@ -71,7 +71,10 @@
                     text-align: center;">
                     <span  style="color: #007772;font-weight: bold;" >Tổng Cộng :  {{  number_format($cart->total_price)}} VNĐ</span>
                     <br>
+                    <form action="{{ Route('done-cart') }}" method="POST">
+                        @csrf()
                     <button type="submit" class="btn btn-success">Đặt Hàng</button>
+
                 </form>
                  </p>
 
@@ -93,5 +96,10 @@
         </section>
         @endsection
         @section('name')
-
+        <script>
+            $(document).ready( function () {
+                $('#myTable').DataTable();
+            } );
+        </script>
+        <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
         @endsection
