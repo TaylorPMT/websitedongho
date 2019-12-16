@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('loginuser','backend\LoginUser@getdangnhap')->name('loginuser');
 Route::post('loginuser','backend\LoginUser@postdangnhap')->name('postloginuser');
 Route::get('dangxuat','backend\LoginUser@dangxuat')->name('dangxuat');
-
-
+//route dang ky
+Route::get('registration','backend\LoginUser@getregis')->name('get_regis');
+Route::post('registration','backend\LoginUser@postregis')->name('post_regis');
 //route login
 Route::get('login','backend\AuthController@getlogin')->name('login');
 Route::post('login','backend\AuthController@postlogin')->name('postlogin');
@@ -112,7 +113,7 @@ Route::group(['prefix' => 'news'], function () {
     //Thêm tin tức
     Route::get('insert','backend\NewsController@getinsert')->name('news_getinsert');
     Route::post('insert','backend\NewsController@postinsert')->name('news_postinsert');
-    
+    //Xoá tin tức
     Route::get('trash','backend\NewsController@trash')->name('news_trash');
     Route::get('deltrash/{id}','backend\NewsController@deltrash')->name('news_deltrash');
     Route::get('delete/{id}','backend\NewsController@delete')->name('news_delete');
@@ -128,6 +129,10 @@ Route::group(['prefix' => 'news'], function () {
         Route::get('status/{id}','backend\NewsController@status')->name('news_status');
 
         Route::get('updatestatus/{id}','backend\NewsController@updatestatus')->name('news_updatestatus');
+        
 });
+//Đăng kí
+
 });
 Route::get('{slug}','frontend\ProductController@detail');
+
