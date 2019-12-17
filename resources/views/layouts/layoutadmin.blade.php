@@ -75,6 +75,18 @@
                                 </div>
 
                               </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Quản Lý Đơn Hàng
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{{ Route('index-order') }}">Danh sách Đơn Đặc Hàng</a>
+
+                                  <div class="dropdown-divider"></div>
+
+                                </div>
+
+                            </li>
                               {{-- xoa --}}
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('logout') }}" tabindex="-1" aria-disabled="true">Thoát</a>
