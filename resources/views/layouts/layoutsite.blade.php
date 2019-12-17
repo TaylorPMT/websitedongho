@@ -69,7 +69,7 @@ use App\Library\Cart;
                           <div class="col-md-3 account-cart">
 
                           <a href="{{ route('loginuser') }}"><i class="fas fa-user"></i>Đăng Nhập</a>
-
+                          <a href="{{ route('get_regis') }}"><i class="fas fa-user"></i>Đăng Ký</a>
 
                           @endif
 

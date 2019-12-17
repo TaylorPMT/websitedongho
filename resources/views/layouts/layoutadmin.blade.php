@@ -61,19 +61,21 @@
 
                                 </div>
 
-                            </li>
-                            <li class="nav-item dropdown">
+                              </li>
+                              {{-- tin tuc --}}
+                              <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Quản Lý Đơn Hàng
+                                  Quản Lý Tin Tức
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{ Route('index-order') }}">Danh sách Đơn Đặc Hàng</a>
-
+                                  <a class="dropdown-item" href="{{ Route('index_news') }}">Danh sách Tin Tức </a>
+                                  <a class="dropdown-item" href="{{ Route('news_getinsert') }}">Thêm  Tin Tức</a>
                                   <div class="dropdown-divider"></div>
 
                                 </div>
 
-                            </li>
+                              </li>
+                              {{-- xoa --}}
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('logout') }}" tabindex="-1" aria-disabled="true">Thoát</a>
                             </li>
