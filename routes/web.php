@@ -113,7 +113,7 @@ Route::group(['prefix' => 'category'], function () {
 
 });
 
-Route::get('{slug}','frontend\ProductController@detail');
+Route::get('chi-tiet/{slug}','frontend\ProductController@detail')->name('slug');
 
 Route::group(['prefix' => 'cart'], function () {
     Route::get('add/{id}','backend\CartController@add')->name('cart-add');
@@ -125,4 +125,5 @@ Route::group(['prefix' => 'cart'], function () {
     Route::post('store','backend\CartController@store')->name('done-cart');
 
 });
+Route::get('404','frontend\HomeController@notfound')->name('404');
 

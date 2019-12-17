@@ -13,4 +13,8 @@ class HomeController extends Controller
         $listcategory=Category::where(['status'=>1,'parentid'=>0])->get();
         return view('frontend.home',compact('listcategory'));
     }
+    function notfound()
+    {
+        return view('errors.404');
+    }
 }

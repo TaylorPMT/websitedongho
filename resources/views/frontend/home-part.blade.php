@@ -13,7 +13,7 @@
             <div class="col-md-3 my-3">
                 <div class="products-category">
                     <div class="card">
-                        <a href="{{ url($item->slug) }}">
+                        <a href="{{ Route('slug',[$item->slug]) }}">
                             <img src="{{ asset('img/product/'.$item->img)  }}" class="card-img-top" alt="...">
                         </a>
                             <div class="card-body">

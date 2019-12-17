@@ -29,7 +29,7 @@
                         @foreach ($list as $row)
                         <div class="col-md-4 ">
                                 <div class="card w-100">
-                                    <a href="{{ url($row->slug) }}">
+                                    <a href="{{ Route('slug',[$row->slug]) }}">
                                         <img src="{{ asset('img/product/'.$row->img) }}" class="card-img-top" alt="...">
                                     </a>
                                         <div class="card-body">

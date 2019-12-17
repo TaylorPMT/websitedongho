@@ -48,6 +48,7 @@
                         <div class ="row justify-content-center my-4">
                              {{$list->links()}}
 
+
                         </div>
                      </div>
                 </div>
