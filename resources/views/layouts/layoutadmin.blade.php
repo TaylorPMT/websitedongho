@@ -30,12 +30,15 @@
                         </div>
                     </div>
             </section>{{--  <end--topbar-->  --}}
-            <section class="clearfix bg-topbar">
+            <section class="clearfix bg-topbar ">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg ">
 
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="
+                        padding: 10px;
+                        padding-left: 30px;
+                    ">
                           <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item dropdown">
@@ -92,21 +95,53 @@
                               <a class="nav-link" href="{{ route('logout') }}" tabindex="-1" aria-disabled="true">Thoát</a>
                             </li>
                           </ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" >Tìm Kiếm</button>
-                          </form>
+
                         </div>
                       </nav>
                 </div>
             </section>
         {{--  <!--header--!>  --}}
           @yield('content')
-        <section class="clearfix copyright bg-topbar border-top my-3">
-                <div class="container">
-                    coppyright @
+          <section class="clearfix copyright bg-topbar border-top my-3" style="margin-bottom: 0 !important">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="title-copyright">Đồ Án WebSite</div>
+                                <div class="sub-title">
+                                Thành Viên Thực Hiện <br>
+                            Nguyễn Anh Nghĩa <br> Phạm Minh Thiện
+                                </div>
+                    </div>
+                    <div class="col">
+                        <div class="title-copyright">Information</div>
+                                <div class="sub-title">
+                                        <a href="#"><i class="fab fa-facebook-square"></i></a> <br>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+
+
+                    </div>
+                    <div class="col">
+                       <div class="title-copyright">Fanpage</div>
+                            <div class="sub-title">
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTh%25E1%25BA%25A3o-D%25C6%25B0%25E1%25BB%25A3c-Tr%25E1%25BB%258B-M%25E1%25BB%25A5n-M%25E1%25BB%2599c-D%25C6%25B0%25C6%25A1ng-Ch%25C3%25A2u-576763146090698%2F&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                    </div>
+
                 </div>
-        </section>{{--  <!!--end--coppyright-->  --}}
+
+
+            </div>
+    </section>{{--  <!!--end--coppyright-->  --}}
+    <section class="clearfix bg-topcoppyright border-top">
+            <div class="container">
+                    <div class="row-1">
+                        <div class="title-copyright"> Copyright 2019 © thien.phamminhstu@gmail.com | ThienDev</div>
+                    </div>
+
+
+            </div>
+    </section>{{--  <!!--end--coppyright-->  --}}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

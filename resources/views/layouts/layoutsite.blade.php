@@ -1,6 +1,8 @@
 @php
 
 use App\Library\Cart;
+use Illuminate\Http\Request;
+
 @endphp
 
 
@@ -22,6 +24,7 @@ use App\Library\Cart;
   </head>
   <body>
          {{--  <!--topbar--!>  --}}
+
             <section class="clearfix topbar bg-topbar">
                     <div class="container">
                         <div class="row">
@@ -42,10 +45,17 @@ use App\Library\Cart;
                         <div class="col-md-3 logo">
                             <img class="img-logo" src="{{ asset('img/logo.png') }}" alt="logo">
                         </div>
+
                         <div class="col-md-6 search">
-                                <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2 input-seach" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                                <form action="{{ Route('seach') }}" class="form-inline my-2 my-lg-0" method="get">
+                                    @php
+
+                                    $key=Request()->key;
+                                    @endphp
+                                        <input class="form-control mr-sm-2 input-seach" name="key" type="search" placeholder="Tìm kiếm Theo Tên Sản Phẩm" aria-label="Search" value="{{ $key }}">
+
                                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+
                                 </form>
                         </div>
 
@@ -60,6 +70,9 @@ use App\Library\Cart;
                                      <a href="{{ Route('cart-view') }}"><i class="fas fa-shopping-cart"></i>
                                  Giỏ Hàng ({{ $cart->total_quanlity}})
                             ({{ number_format($cart->total_price) }})VNĐ </a></div>
+                                    <div>
+                                        <a href="{{ Route('orderapproved') }}">Các Đơn Hàng Của Bạn</a>
+                                    </div>
                                 <div>
                                     <a href="{{ Route('dangxuat') }}">Đăng Xuất</a>
                                 </div>
@@ -108,10 +121,9 @@ use App\Library\Cart;
                                     </div>
                         </div>
                         <div class="col">
-                            <div class="title-copyright">Information</div>
+                            <div class="title-copyright">Địa Chỉ</div>
                                     <div class="sub-title">
-                                            <a href="#"><i class="fab fa-facebook-square"></i></a> <br>
-                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9321342534836!2d106.67597571489156!3d10.739713992346452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fac96e4c9bf%3A0xa2bdf67b41f7a794!2zxJDGsOG7nW5nIENhbyBM4buXLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1576670492359!5m2!1svi!2s" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                                     </div>
 
 
@@ -131,7 +143,7 @@ use App\Library\Cart;
         <section class="clearfix bg-topcoppyright border-top">
                 <div class="container">
                         <div class="row-1">
-                           <div class="title-copyright"> Copyright 2019 © nguyennghia@gmail.com | NghiaDeveLoper</div>
+                           <div class="title-copyright"> Copyright 2019 © thien.phamminhstu@gmail.com | ThienDev</div>
                         </div>
 
 
@@ -145,7 +157,10 @@ use App\Library\Cart;
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script> CKEDITOR.replace('editor1'); </script>
+<script> CKEDITOR.replace('editor1');
+
+</script>
         @yield('session_footer')
+        <script defer > window.onload = function(){ setTimeout(function(){var chatJsElement = document.createElement("script"); chatJsElement.src = "https://app.ohchat.net/clients/43883/code.php"; chatJsElement.setAttribute("defer", "defer"); document.getElementsByTagName("body")[0].appendChild(chatJsElement);}, 300) }; </script>
   </body>
 </html>

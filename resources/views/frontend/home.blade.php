@@ -18,6 +18,7 @@
                             @includeIf('frontend.sildebar_silder')
                      </div>
                 </div>
+                 @includeIf('frontend.modules.message')
                 <section class="clearfix inner my-5">
                     <div class="container">
                         <div class="row">

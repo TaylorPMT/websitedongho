@@ -20,7 +20,23 @@ class ProductController extends Controller
         $row_cat=Category::where(['slug'=>$slug])->first();
         $category_all=Category::where(['status'=>1])->get();
         $list_catid=Library_my::category_listid($category_all,$row_cat->id,[$row_cat->id]);
-        $list=Product::where(['status'=>1])->whereIn('catid',$list_catid)->orderBy('created_at',"desc")->paginate(9);
+        $list=Product::where(['status'=>1])->whereIn('catid',$list_catid)->orderBy('created_at',"desc")->paginate(6);
+        return view('frontend.product-category',compact('list'));
+    }
+    public function sapxepgiam($slug)
+    {
+        $row_cat=Category::where(['slug'=>$slug])->first();
+        $category_all=Category::where(['status'=>1])->get();
+        $list_catid=Library_my::category_listid($category_all,$row_cat->id,[$row_cat->id]);
+        $list=Product::where(['status'=>1])->whereIn('catid',$list_catid)->orderBy('price',"desc")->paginate(9);
+        return view('frontend.product-category',compact('list'));
+    }
+    public function sapxeptang($slug)
+    {
+        $row_cat=Category::where(['slug'=>$slug])->first();
+        $category_all=Category::where(['status'=>1])->get();
+        $list_catid=Library_my::category_listid($category_all,$row_cat->id,[$row_cat->id]);
+        $list=Product::where(['status'=>1])->whereIn('catid',$list_catid)->orderBy('price',"asc")->paginate(9);
         return view('frontend.product-category',compact('list'));
     }
     function detail($slug)
@@ -28,7 +44,8 @@ class ProductController extends Controller
         $row =Product::where(['slug'=>$slug])->first();
         $category_all=Category::where(['status'=>1])->get();
         $list_catid=Library_my::category_listid($category_all,$row->id,[$row->id]);
-        $listother=Product::where([['status','=',1],['id','<>',$row->id]])->whereIn('catid',$list_catid)->orderBy('created_at',"desc")->take(6)->get();
+        $listother=Product::where([['status','=','1'],['id','<>',$row->id]])
+        ->whereIn('catid',$list_catid)->orderBy('created_at',"desc")->get();
         return view('frontend.product-detail',compact('row','listother'));
     }
 }

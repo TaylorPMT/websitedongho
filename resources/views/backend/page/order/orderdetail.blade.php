@@ -11,7 +11,7 @@
 
 
 
-<section class="clearfix maincontent my-3">
+<section class="clearfix maincontent">
     <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -24,6 +24,8 @@
                         <div class="col-md-6 text-right">
                             <a class="btn btn-sm btn-success"  href="{{ Route('approved') }}"><i class="fas fa-plus"  style="color: white;" > Danh Sách Đơn Hàng Đã Duyệt</i> </a>
                             <a class="btn btn-sm btn-danger" href="{{ Route('error') }}" style="color :white;"  href=""><i class="fas fa-trash-alt"  style="color: white;"> Danh Sách Đơn Hàng Bị Lỗi</i>
+                            </a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('index-order') }}"><i class="fas fa-sign-out-alt"></i>Quay Lại
                             </a>
                         </div>
 
@@ -38,48 +40,47 @@
                    <thead>
                        <tr>
 
-                            <th>Mã Đơn Đặt Hàng</th>
-                            <th>Tên Người Đặt Hàng</th>
-                            <th>Số Điện Thoại</th>
-                            <th>Email</th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Đơn Giá</th>
 
-                            <th>Ngày Đặt Mua</th>
-                            <th>Tình Trạng</th>
-                            <th>Tổng Đơn Hàng</th>
-                            <th>Xem Chi Tiết Đơn</th>
+                            <th>Tổng giá sản phẩm</th>
+
+
                        </tr>
 
                    </thead>
                    <tbody>
                        @foreach ($list as $row)
                            <tr>
+                                <td>{{  $id=$row->orderid}}</td>
+
+                               <td>{{ $row->name }}</td>
+                               <td>{{ $row->quantity }}</td>
+                               <td>{{ $row->price }}</td>
+                               <td class="text-info" colspan="2">{{ number_format($row->amount) }}VNĐ</td>
 
 
-                               <td>{{ $row->code }}</td>
-                               <td> {{ $row->deliveryname }}</td>
-                               <td>{{ $row->deliveryphone }}</td>
-                               <td>{{ $row->deliveryemail }}</td>
-                               <td class="text-info">{{ date("d-m-Y", strtotime($row->created_at))}}</td>
-                               <td>
-                                   @if ($row->status==1)
-                                   <a class="btn btn-light" href=""><i class="fas fa-toggle-on">Đang Chờ</i></a>
-                                   @elseif($row->status==2)
-
-                                   <a class="btn btn-sm btn-warning" href="">Đã Duyệt<i class="fas fa-toggle-off"></i></a>
-                                    @else
-                                    <a class="btn btn-sm btn-danger" href="">Hủy Đơn<i class="fas fa-toggle-off"></i></a>
-                                   @endif
-
-
-                               </td>
-                               <td>{{ number_format($row->total_order) }} VNĐ</td>
-                               <td><a href="{{ Route('orderdetail',['code'=>$row->code]) }}" class="btn btn-light" ><i class="fas fa-envelope-open-text"></i></a></td>
                            </tr>
                        @endforeach
+
                    </tbody>
+
                </table>
+
+
             </div>
-            <div class="card-footer text-muted">
+
+            <div class="card-footer text-muted ">
+                <div class="container">
+                    <div class="row">
+                        <span class="text-center" style="margin:auto">
+                        <a href="{{ Route('status',['code'=>$id]) }}" class="btn btn-sm btn-success" style="color:white;">Duyệt Đơn Hàng</a>
+                        <a   href="{{ Route('orderdetail-error',['code'=>$id]) }}" class="btn btn-sm btn-danger" style="color:white;">Hủy Đơn ( Đơn Bị Lỗi )</a>
+                         </span>
+                    </div>
+                </div>
 
             </div>
     </div>

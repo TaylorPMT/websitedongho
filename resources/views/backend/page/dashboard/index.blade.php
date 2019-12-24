@@ -13,13 +13,15 @@
 
 <section class="clearfix maincontent">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md">
-                    <p class="text-center text-info ">Đây Là Trang Chức Năng </p>
-                    <p class="text-center text-info ">Đây Là Trang Chức Năng </p>
-                    <p class="text-center text-info ">Đây Là Trang Chức Năng </p>
-                    <p class="text-center text-info ">Đây Là Trang Chức Năng </p>
-                    <p class="text-center text-info ">Đây Là Trang Chức Năng </p>
+            <div class="row" style="min-height: 400px;">
+                <div class="col">
+                    <p class="text-center text-info ">Các Chức năng thực Hiện  </p>
+                    <p class="text-center text-info ">Quản Lý Tin Tức</p>
+                    <p class="text-center text-info ">Quản Lý Danh Mục Sản Phẩm </p>
+                    <p class="text-center text-info ">Quản Lý Sản Phẩm </p>
+                    <p class="text-center text-info ">Quản Lý Đơn Hàng</p>
+
+
                 </div>
             </div>
         </div>

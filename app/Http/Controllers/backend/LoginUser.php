@@ -53,16 +53,16 @@ class LoginUser extends Controller
         return view('frontend.registration');
     }
     function postregis(RegistrationRequest $request){
-        
+
 
         $row=new User;
-        $row->fullname=$request->name;
-        $row->name=$request->username;
+        $row->fullname=$request->fullname;
+        $row->name=$request->name;
         $password=$request->password;
 // To create a valid password out of laravel Try out!
             $cost=10; // Default cost
             $passwordh = password_hash($password, PASSWORD_BCRYPT, ['cost' => $cost]);
-     
+
         $row->password=$passwordh;
         $row->email=$request->email;
         if ($request->nam)
@@ -72,7 +72,7 @@ class LoginUser extends Controller
         else{
             $row->gender=2;
         }
-        
+
         $row->phone=$request->phone;
         $row->access=2;
         $row->created_at=Carbon::now('Asia/Ho_Chi_Minh');

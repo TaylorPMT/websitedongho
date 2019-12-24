@@ -1,9 +1,11 @@
 {{--  <!!--view-->  --}}
 @php
-    use App\Models\Category;
-
-    $listcat=Category::where(['status'=>1,'parentid'=>0])->get();
-
+$s=0;
+foreach($list as $row)
+{
+    $s++;
+}
+$key;
 @endphp
 @extends('layouts.layoutsite')
         @section('title','Sản Phẩm')
@@ -17,43 +19,19 @@
             <div class="container">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Trang Chủ </li>
-                        <li class="breadcrumb-item active">Sản Phẩm </li>
+                        <li class="breadcrumb-item active">Tìm Kiếm </li>
 
                     </ol>
             </div>
         </nav>
         <section class="clearfix maincontent">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 listcategorys">
-                            @includeIf('frontend.sildebar_category')
-                    </div>
-
-                    <div class="col-md-9">
-                        <h3 class="text-center">
-                            @php
-
-                                foreach($list as $cat)
-                                {
-                                    $idcat=$cat->catid;
-
-                                }
-                                $listcate=Category::where('id','=',$idcat)->get();
-
-                                foreach($listcate as $t)
-                                {
-                                    $slug=$t->slug;
+                    <h3>Sản Phẩm Bạn Vừa Tìm Là {{$key}}</h3>
+                    <h3 class="text-success">Tìm Kiếm Được {{ $s }} Sản Phẩm 
+                    </h3>
 
 
-                                }
-
-
-                            @endphp
-                                <a href="{{url('sap-xep-giam/'.$slug)}}" class="btn btn-success">sắp xếp giảm</a>
-                                <a href="{{url('sap-xep-tang/'.$slug)}}" class="btn btn-success">sắp xếp tăng dần</a>
-                        </h3>
-                           <div class="row">
-
+                        <div class="row my-5">
                                {{--  <!!--Chi Tiết Sản Phẩm --!!>  --}}
                         @foreach ($list as $row)
                         <div class="col-md-4 ">
@@ -62,7 +40,7 @@
                                         <img src="{{ asset('img/product/'.$row->img) }}" class="card-img-top" alt="...">
                                     </a>
                                         <div class="card-body">
-                                                <a href="{{ Route('slug',[$row->slug]) }}">
+                                                <a href="{{ url($row->slug) }}">
                                                     <h5 class="card-title">{{$row->name }}</h5>
                                                 </a>
                                             <h5 class="card-price">{{ number_format($row->price) }}</h5>
@@ -75,12 +53,10 @@
                                         </div>
                                         </div>
                                     </div>
-                        @endforeach
-                        </div>
-                        <div class ="row justify-content-center my-4">
-                             {{$list->links()}}
 
-                        </div>
+                        @endforeach
+
+
                      </div>
                 </div>
                 {{-- <!!--Products--> --}}

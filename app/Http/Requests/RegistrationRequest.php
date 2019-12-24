@@ -25,6 +25,7 @@ class RegistrationRequest extends FormRequest
     {
         return [
          'name' => 'required|unique:db_user|',
+         'fullname' => 'required|unique:db_user|',
          //   'fullname' => 'required',
          //   'email'=>'required',
             //unique kiem tra trung
@@ -37,8 +38,10 @@ class RegistrationRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'=>'Tên Đăng Nhập Bắt Buộc Phải Có',
-
+            'name.required'=>'Họ Tên Bắt Buộc Phải Có',
+            'name.unique'=>'Tên Đăng Nhập Đã Tồn Tại',
+            'fullname.unique'=>'tên đã tồn tại',
+            'fullname.required'=>'tên bắt buộc có ',
           // 'topid.required'=>'Bạn Chưa Chọn Loại Sản Phẩm',
           //  'email.required'=>'Email Không được để trống',
             //'password.required'=>'Họ và tên Không được để trống',

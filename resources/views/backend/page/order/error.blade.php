@@ -25,6 +25,8 @@
                             <a class="btn btn-sm btn-success"  href="{{ Route('approved') }}"><i class="fas fa-plus"  style="color: white;" > Danh Sách Đơn Hàng Đã Duyệt</i> </a>
                             <a class="btn btn-sm btn-danger" href="{{ Route('error') }}" style="color :white;"  href=""><i class="fas fa-trash-alt"  style="color: white;"> Danh Sách Đơn Hàng Bị Lỗi</i>
                             </a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('index-order') }}"><i class="fas fa-sign-out-alt"></i>Quay Lại
+                            </a>
                         </div>
 
                     </div>
@@ -47,6 +49,7 @@
                             <th>Tình Trạng</th>
                             <th>Tổng Đơn Hàng</th>
                             <th>Xem Chi Tiết Đơn</th>
+
                        </tr>
 
                    </thead>
@@ -61,19 +64,20 @@
                                <td>{{ $row->deliveryemail }}</td>
                                <td class="text-info">{{ date("d-m-Y", strtotime($row->created_at))}}</td>
                                <td>
-                                   @if ($row->status==1)
-                                   <a class="btn btn-light" href=""><i class="fas fa-toggle-on">Đang Chờ</i></a>
-                                   @elseif($row->status==2)
+                                @if ($row->status==1)
+                                <a class="btn btn-light" href=""><i class="fas fa-toggle-on">Đang Chờ</i></a>
+                                @elseif($row->status==2)
 
-                                   <a class="btn btn-sm btn-warning" href="">Đã Duyệt<i class="fas fa-toggle-off"></i></a>
-                                    @else
-                                    <a class="btn btn-sm btn-danger" href="">Hủy Đơn<i class="fas fa-toggle-off"></i></a>
-                                   @endif
+                                <a class="btn btn-sm btn-warning" href="">Đã Duyệt<i class="fas fa-toggle-off"></i></a>
+                                 @else
+                                 <a class="btn btn-sm btn-danger" href="">Hủy Đơn<i class="fas fa-toggle-off"></i></a>
+                                @endif
 
 
                                </td>
                                <td>{{ number_format($row->total_order) }} VNĐ</td>
                                <td><a href="{{ Route('orderdetail',['code'=>$row->code]) }}" class="btn btn-light" ><i class="fas fa-envelope-open-text"></i></a></td>
+
                            </tr>
                        @endforeach
                    </tbody>

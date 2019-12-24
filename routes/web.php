@@ -42,10 +42,13 @@ Route::get('san-pham','frontend\ProductController@index');
 Route::get('san-pham/{slug}','frontend\ProductController@index');
 
 Route::get('san-pham/{slug}','frontend\ProductController@category');
+Route::get('sap-xep-giam/{slug}','frontend\ProductController@sapxepgiam');
+Route::get('sap-xep-tang/{slug}','frontend\ProductController@sapxeptang');
 
 //page tin tuc
 Route::get('page/tin-tuc','page\PageController@tintuc')->name('tintuc');
 Route::get('page/tin-tuc/{slug}','page\PageController@detail');
+Route::get('page/seach','page\PageController@seach')->name('seach');
 
 //Admin
 Route::group(['prefix' => 'admin','middleware'=>'LoginAdmin'], function() {
@@ -134,6 +137,12 @@ Route::group(['prefix' => 'news'], function () {
     //route order
     Route::group(['prefix' => 'order'], function () {
         Route::get('/','backend\OrderController@index')->name('index-order');
+        Route::get('approved','backend\OrderController@approved')->name('approved');
+        Route::get('error','backend\OrderController@error')->name('error');
+        Route::get('orderdetail/{code}','backend\OrderDetailController@orderdetail')->name('orderdetail');
+        Route::get('status/{code}','backend\OrderDetailController@status')->name('status');
+        Route::get('error/{code}','backend\OrderDetailController@error')->name('orderdetail-error');
+
     });
 
 });
@@ -147,6 +156,9 @@ Route::group(['prefix' => 'cart'], function () {
     //view giỏ hàng
     Route::get('view','backend\CartController@view')->name('cart-view');
     Route::post('store','backend\CartController@store')->name('done-cart');
+    Route::get('orderapproved','backend\CartController@orderapproved')->name('orderapproved');
+    Route::get('order-detail/{id}','backend\CartController@orderdetail')->name('orderdetailcart');
+
 });
 Route::get('404','frontend\HomeController@notfound')->name('404');
 

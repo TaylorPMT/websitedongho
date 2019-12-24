@@ -25,7 +25,7 @@ class CartController extends Controller
 
 
 
-       return redirect()->back();
+       return redirect()->back()->with("message",["type"=>"success","msg"=>"Đặt Hàng Thành Công"]);
     }
 
     public function remove(Cart $cart ,$id)
@@ -66,7 +66,7 @@ class CartController extends Controller
         $roworder=new Order;
         $roworder->code=$code_donhanh;
         $roworder->userid=$user_id;
-        $roworder->created_ate=Carbon::now('Asia/Ho_Chi_Minh');
+
         $roworder->exportdate=Carbon::now('Asia/Ho_Chi_Minh');
         $roworder->deliveryname=$name_user;
         $roworder->deliveryphone=$phone;
@@ -91,11 +91,25 @@ class CartController extends Controller
         if($roworder->save()&&$roworderdetrail->save())
         {
             $cart->clear();
-            return redirect()->route("cart-view")->with("message",["type"=>"success","msg"=>"Chưa Chọn Hình Đại Diện"]);
+            return redirect()->route("cart-view")->with("message",["type"=>"success","msg"=>"Đặt Hàng Thành Công"]);
         }
 
 
 
+    }
+    public function orderapproved()
+    {
+        $id_user=Auth::user()->id;
+        $list=Order::where('userid','=',$id_user)->get();
+        return view('frontend.order-approved',compact('list'));
+    }
+    public function orderdetail($id)
+    {
+        $list=Orderdetail::where('db_orderdetail.orderid','=',$id)
+        ->join("db_product","db_orderdetail.productid",'=',"db_product.id")
+        ->select('db_orderdetail.*','db_product.name as nameproduct')
+        ->get();
+        return view('frontend.orderdetail',compact('list'));
     }
 
 }

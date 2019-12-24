@@ -18,9 +18,9 @@
             <div class="container">
                 <div class="row">
                     <h3 class="text-center text-warning">Giỏ Hàng Của Bạn </h3>
-
+                    @includeIf('frontend.modules.message')
                     <table id="myTable" class="table table-hover table-striped my-5">
-                            @includeIf('backend.modules.message')
+
                                 <thead>
                                   <tr>
 
@@ -48,7 +48,7 @@
                                           <form action="{{ Route('cart-update',['id'=>$item['id']]) }}" method="GET">
 
                                             <span >
-                                                <input type="number" name="quantity" value="{{ $item['quantity'] }}" class="small">
+                                                <input type="number" name="quantity" value="{{ $item['quantity'] }}" class="small" min="1">
                                                <button type="submit" class="btn-success">Cập Nhật</button>
                                             </span>
                                           </form>
@@ -56,7 +56,7 @@
                                       <td>{{ number_format($item['price']) }} VNĐ</td>
                                       <td>{{ number_format($item['price']*$item['quantity'] )}} VNĐ</td>
 
-                                      <td><a href="{{ Route('cart-remove',['id'=>$item['id']]) }}"><i class="fas fa-times btn btn-danger"></i></a></td>
+                                      <td><a href="{{ Route('cart-remove',['id'=>$item['id']]) }}"><i class="fas fa-times btn btn-danger">Xóa Sản Phẩm</i> </a></td>
                                     </tr>
                                   @endforeach
 
@@ -66,6 +66,23 @@
                                 </tbody>
 
                               </table>
+
+
+                </div>
+                <div class="row">
+                    <p style="
+                    text-align: center;
+                    margin: auto;
+                    padding: 10px;
+                    ">
+                <a href="{{ Route('user') }}" class="btn btn-sm btn-success">Mua Hàng Tiếp</a>
+                <a href="{{ Route('cart-clear') }}" class="btn btn-sm btn-danger">Xóa Giỏ Hàng</a>
+
+            </p>
+
+                </div>
+                <div class="row">
+
                     <p style="
                     margin: auto;
                     text-align: center;">
@@ -73,11 +90,11 @@
                     <br>
                     <form action="{{ Route('done-cart') }}" method="POST">
                         @csrf()
-                    <button type="submit" class="btn btn-success">Đặt Hàng</button>
+                     <p>
+                    <button type="submit" class="btn btn-success">Đặt Hàng</button> </p>
 
                 </form>
                  </p>
-
                 </div>
 
             </div>
